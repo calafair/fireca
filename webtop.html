@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<title>Fireca Webtop - Silicone v1.1</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Welcome to Fireca Web Desktop. This is the latest build of the Silicone UI.">
+<meta name="author" content="Christoph Alvin Alafair">
+  <!-- Meta Tags required for
+       Progressive Web App -->
+  <meta name=
+  "apple-mobile-web-app-status-bar"
+        content="#30336b">
+  <meta name="theme-color"
+        content="#2980b9">
+  <!-- Manifest File link -->
+  <link rel="manifest"
+        href="manifest.json">
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "8bgnptuvnc");
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+<link rel="shortcut icon" type="image/png" href="https://image.flaticon.com/icons/png/512/141/141731.png"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+.tooltip-box {font-family: "Roboto", Helvetica, Arial, sans-serif; border-radius: 4px; font-size: 14px; color: #fff; background: rgba(44, 62, 80, 0.65); position: absolute; top: 0; left: 0; max-width: 300px; padding: 5px 10px; opacity: 0; pointer-events: none; z-index: 900000000000000000000000000000000000000000000000000000000000000000000000000000000000;}
+body, h1 {font-family: "Roboto", Helvetica, Arial, sans-serif;}
+.raleway {font-family: "Roboto", Helvetica, Arial, sans-serif;}
+.blurr {-webkit-backdrop-filter: blur(99px); backdrop-filter: blur(99px);}
+body, html {height: 100%}
+.newsapp {display: none; top: 43%; left: 50%; transform: translate(-50%, -50%);}
+#news {position: absolute; z-index: 9; background-color: transparent; text-align: center;}
+#newsbar {padding: 10px; z-index: 10; cursor: default; background-color: rgba(120, 150, 120, 0.4); color: #fff;}
+.dashboardapp {display: none;}
+#dashboard {backdrop-filter: blur(99px); -webkit-backdrop-filter: blur(99px); position: absolute; z-index: 9; background-color: transparent; text-align: center;}
+#dashboardbar {padding: 10px; z-index: 10; cursor: default; background-color: rgba(120, 150, 120, 0.4); color: #fff;}
+.calculatorapp {display: none; top: 43%; left: 50%; transform: translate(-50%, -50%);}
+#calculator {position: absolute; z-index: 9; background-color: transparent; text-align: center;}
+#calculatorbar {padding: 10px; z-index: 10; cursor: default; background-color: rgba(38, 50, 56, 0.5); color: #fff;}
+.bblur {backdrop-filter: blur(99px); -webkit-backdrop-filter: blur(99px); border-radius: 35px; width: 30%; cursor: default;}
+.navbar {backdrop-filter: blur(99px); background-color: rgba(100, 100, 100, 0.3); -webkit-backdrop-filter: blur(99px); position: fixed; bottom: 0; width: 100%; z-index: 9000000000000000000000000000000000000000000000000000000000000;}
+.navbar a {color: #f2f2f2; display: block; text-align: center; padding: 10px 10px; text-decoration: none; font-size: 1px; transition: 0.15s;}
+.navbar a:hover {background: rgba(255, 255, 255, 0.05);}
+.closebtn {vertical-align: subalign; width: 20px;}
+.unselectable {user-select: none; -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none;}
+#quicksettings {display: none; backdrop-filter: blur(99px); -webkit-backdrop-filter: blur(99px);}
+#btn {width: 100%; height: 40px; font-size: 20px;}
+#calc{background-color: rgba(38, 50, 56, 0.5); backdrop-filter: blur(99px);}
+input[type="button"]{background-color: transparent; color: white; border: none; width: 100%; border-collapse: collapse;}
+input[type="button"]:hover{background-color: rgba(255, 255, 255, 0.2); color: white;}
+input[type="text"]{background-color: transparent; border-bottom: solid 1px white; border-left: none; border-right: none; border-top: none; width: 100%; border-collapse: collapse; color: white;}
+#bgimg {background: url('https://www.wallpapertip.com/wmimgs/168-1684937_download-google-pixel-slate-stock-wallpapers-technastic-pixel.jpg'); min-height: 100%; background-position: center; background-size: cover;}
+</style>
+<script>		
+		function backspace(calc) {											
+			size = calc.display.value.length;
+			calc.display.value = calc.display.value.substring(0, size-1);
+		}x4
+		
+		function calculate(calc) {
+			
+			if(calc.display.value.includes("!")) {
+				
+				size = calc.display.value.length;
+				n = Number(calc.display.value.substring(0, size-1));
+				f = 1;
+				
+				for(i = 2; i <= n; i++)
+					f = f*i;
+				calc.display.value = f;
+			}
+			
+			else if(calc.display.value.includes("%")) {
+				
+				size = calc.display.value.length;
+				n = Number(calc.display.value.substring(0, size-1));
+				calc.display.value = n/100;
+			}
+
+			else
+				calc.display.value = eval(calc.display.value);
+		}
+	</script>
+  </head>
+<body class="w3-animate-top">
+<div id="bgimg" class="w3-display-container w3-animate-opacity w3-text-white">
+    <a style="text-decoration:none; cursor:pointer;" id="quicksettingsicon" class="w3-ripple w3-small unselectable"><span class="material-icons">
+dashboard
+</span></a>
+<div id="quicksettings">Quick Settings</div>
+  <div class="w3-display-middle bblur unselectable">
+    <h1 class="w3-jumbo w3-animate-top w3-center" id="clock"> </h1>
+    <hr class="w3-border-grey" style="margin:auto; width:40%">
+    <p class="w3-medium w3-center"><script>days=7,lastvisit=new Object,firstvisitmsg="Welcome! Click on an app to get started.";lastvisit.subsequentvisitmsg="Welcome back! Last login: <br>[displaydate]",lastvisit.getCookie=function(t){var e=new RegExp(t+"=[^;]+","i");return document.cookie.match(e)?document.cookie.match(e)[0].split("=")[1]:""},lastvisit.setCookie=function(t,e,s){var i=new Date;i.setDate(i.getDate()+parseInt(s));document.cookie=t+"="+e+"; expires="+i.toGMTString()+"; path=/"},lastvisit.showmessage=function(){var t=new Date;if(""==lastvisit.getCookie("visitc"))lastvisit.setCookie("visitc",t,days),document.write(firstvisitmsg);else{var e=lastvisit.getCookie("visitc"),s=Date.parse(e),i=new Date;i.setTime(s);var a=new Array("Sun","Mon","Tues","Wed","Thur","Fri","Sat"),o=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"),n=i.getDate(),r=i.getDay();r=a[r];var v=i.getMonth();v=o[v],yy=i.getFullYear();var c=i.getHours(),l="AM";c>=12&&(l="PM"),c>12&&(c-=12),0==c&&(c=12),c<10&&(c="0"+c);var u=i.getMinutes();u<10&&(u="0"+u);var g=i.getSeconds();g<10&&(g="0"+g);var m=r+", "+v+" "+n+", "+yy+" "+c+":"+u+":"+g+" "+l;document.write(lastvisit.subsequentvisitmsg.replace("[displaydate]",m))}lastvisit.setCookie("visitc",t,days)},lastvisit.showmessage();</script><br></p>
+  </div>
+<div class="w3-bar navbar w3-round">
+	<div class="w3-center">
+  <a style="filter:invert();" class="w3-ripple w3-hover-none w3-bar-item unselectable" id="launchericon"><img rel="nofollow" alt="Launcher" width="43.5px" height="44" src="https://cdn-icons-png.flaticon.com/512/61/61168.png"></a>
+  <a class="w3-hover-none w3-bar-item unselectable">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</a>
+  <a data-tooltip="Dashboard" data-tooltip-position="top" class="w3-ripple w3-bar-item unselectable" id="dashboardicon"><img rel="nofollow" alt="Dashboard" width="44px" height="44.5" src="https://image.flaticon.com/icons/png/512/4978/4978742.png"></a>
+  <a data-tooltip="Dashboard" data-tooltip-position="top" class="w3-ripple w3-bar-item unselectable" id="interwebicon"><img rel="nofollow" alt="InterWeb" width="43.8px" height="44.5px" src="https://image.flaticon.com/icons/png/512/438/438016.png"></a>
+  <a data-tooltip="Dashboard" data-tooltip-position="top" class="w3-ripple w3-bar-item unselectable" id="settingsicon"><img rel="nofollow" alt="Settings" width="43.8px" height="44.5px" src="http://icons.iconarchive.com/icons/graphicloads/100-flat/256/settings-3-icon.png"></a>
+  <a data-tooltip="Dashboard" data-tooltip-position="top" class="w3-ripple w3-bar-item unselectable" id="calculatoricon"><img rel="nofollow" alt="Calculator" width="43px" height="44.3px" src="https://image.flaticon.com/icons/png/512/4205/4205897.png"></a>
+  <a data-tooltip="Dashboard" data-tooltip-position="top" class="w3-ripple w3-bar-item unselectable" id="texteditoricon"><img rel="nofollow" alt="Text Editor" width="44.5px" height="44.5px" src="http://icons.iconarchive.com/icons/graphicloads/long-shadow-documents/256/document-edit-icon.png"></a>
+  <a data-tooltip="Dashboard" data-tooltip-position="top" class="w3-ripple w3-bar-item unselectable" id="mediaplayericon"><img rel="nofollow" alt="Media Player" width="45.5px" height="45px" src="https://freeiconshop.com/wp-content/uploads/edd/folder-flat.png"></a>
+  <a data-tooltip="Dashboard" data-tooltip-position="top" class="w3-ripple w3-bar-item unselectable" id="newsicon"><img rel="nofollow" alt="News" width="45.8px" height="45.8px" src="https://image.flaticon.com/icons/png/512/5296/5296039.png"></a>
+  <a data-tooltip="Dashboard" data-tooltip-position="top" class="w3-ripple w3-bar-item unselectable" id="arcadeicon"><img rel="nofollow" alt="Arcade" width="45.8px" height="45.8px" src="https://image.flaticon.com/icons/png/512/4799/4799213.png"></a>
+	</div>
+</div>
+<div id="news" class="blurr newsapp"><div id="newsbar" class="unselectable">Latest News<span id="newsclose" class="w3-right closebtn"><span class="material-icons w3-ripple w3-center w3-hover-red" style="font-size:22.3px;">close</span></span></div>
+<div class="feedgrabbr_widget" id="fgid_d32389d31abdbb9f254b29643"></div>
+<script>if (typeof (fg_widgets) === "undefined") fg_widgets = new Array(); fg_widgets.push("fgid_d32389d31abdbb9f254b29643");</script>
+<script async src="https://www.feedgrabbr.com/widget/fgwidget.js"></script>
+</div>
+<div id="dashboard" class="blurr dashboardapp"><div id="dashboardbar" class="unselectable">Dashboard<span id="dashboardclose" class="w3-right closebtn"><span class="material-icons w3-ripple w3-center w3-hover-red" style="font-size:22.3px;">close</span></span></div>
+under construction
+</div>
+<div id="calculator" class="blurr calculatorapp"><div id="calculatorbar" class="unselectable">Calculator<span id="calculatorclose" class="w3-right closebtn"><span class="material-icons w3-ripple w3-center w3-hover-red" style="font-size:22.3px;">close</span></span></div>
+<form name="calc">
+		
+	<table id="calc" border="0">
+		
+	<tr>
+		<td colspan=5><input id="btn" class="w3-ripple" name="display"
+			onkeypress="return event.charCode >= 48
+			&& event.charCode <= 57" type="text">
+		</td>
+	</tr>
+	
+	<tr>
+		<td><input id="btn" class="w3-ripple" type="button" value="1"
+				OnClick="calc.display.value+='1'">
+		</td>
+		
+		<td><input id="btn" class="w3-ripple" type="button" value="2"
+				OnClick="calc.display.value+='2'">
+		</td>
+		
+		<td><input id="btn" class="w3-ripple" type="button" value="3"
+				OnClick="calc.display.value+='3'">
+		</td>
+		
+		<td><input id="btn" class="w3-ripple" type="button" value="C"
+				OnClick="calc.display.value=''">
+		</td>
+		<td><input id="btn" class="w3-ripple" type="button" value="<-"
+				OnClick="backspace(this.form)">
+		</td>
+		<td><input id="btn" class="w3-ripple" type="button" value="="
+				OnClick="calculate(this.form)">
+		</td>
+	</tr>
+	
+	<tr>
+		<td><input id="btn" class="w3-ripple" type="button" value="4"
+				OnClick="calc.display.value+='4'">
+		</td>
+		
+		<td><input id="btn" class="w3-ripple" type="button" value="5"
+				OnClick="calc.display.value+='5'">
+		</td>
+		
+		<td><input id="btn" class="w3-ripple" type="button" value="6"
+				OnClick="calc.display.value+='6'">
+		</td>
+		
+		<td><input id="btn" class="w3-ripple" type="button" value="-"
+				OnClick="calc.display.value+='-'">
+		</td>
+		
+		<td><input id="btn" class="w3-ripple" type="button" value="%"
+				OnClick="calc.display.value+='%'">
+		</td>
+		
+		<td><input id="btn" class="w3-ripple" type="button" value="cos"
+				OnClick="calc.display.value='Math.cos('">
+		</td>
+	</tr>
+	
+	<tr>
+		<td><input id="btn" class="w3-ripple" type="button" value="7"
+				OnClick="calc.display.value+='7'">
+		</td>
+		
+		<td><input id="btn" class="w3-ripple" type="button" value="8"
+				OnClick="calc.display.value+='8'">
+		</td>
+		
+		<td><input id="btn" class="w3-ripple" type="button" value="9"
+				OnClick="calc.display.value+='9'">
+		</td>
+		
+		<td><input id="btn" class="w3-ripple" type="button" value="*"
+				OnClick="calc.display.value+='*'">
+		</td>
+		
+		<td><input id="btn" class="w3-ripple" type="button" value="n!"
+				OnClick="calc.display.value+='!'">
+		</td>
+		
+		<td><input id="btn" class="w3-ripple" type="button" value="sin"
+				OnClick="calc.display.value='Math.sin('">
+		</td>
+	</tr>
+	
+	<tr>
+		<td><input id="btn" class="w3-ripple" type="button" value="."
+				OnClick="calc.display.value+='.'">
+		</td>
+		
+		<td><input id="btn" class="w3-ripple" type="button" value="0"
+				OnClick="calc.display.value+='0'">
+		</td>
+		
+		<td><input id="btn" class="w3-ripple" type="button" value=","
+				OnClick="calc.display.value+=','">
+		</td>
+		
+		<td><input id="btn" class="w3-ripple" type="button" value="+"
+				OnClick="calc.display.value+='+'">
+		</td>
+		
+		<td><input id="btn" class="w3-ripple" type="button" value="/"
+				OnClick="calc.display.value+='/'">
+		</td>
+		
+		<td><input id="btn" class="w3-ripple" type="button" value="tan"
+				OnClick="calc.display.value='Math.tan('">
+		</td>
+	</tr>
+	
+	<tr>
+		<td><input id="btn" class="w3-ripple" type="button" value="E"
+				OnClick="calc.display.value+='Math.E'">
+		</td>
+		
+		<td><input id="btn" class="w3-ripple" type="button" value="pi"
+				OnClick="calc.display.value+='Math.PI'">
+		</td>
+		
+		<td><input id="btn" class="w3-ripple" type="button" value="^"
+				OnClick="calc.display.value+='Math.pow('">
+		</td>
+		
+		<td><input id="btn" class="w3-ripple" type="button" value="("
+				OnClick="calc.display.value+='('">
+		</td>
+		
+		<td><input id="btn" class="w3-ripple" type="button" value=")"
+				OnClick="calc.display.value+=')'">
+		</td>
+		
+		<td><input id="btn" class="w3-ripple" type="button" value="log"
+				OnClick="calc.display.value='Math.log('">
+		</td>
+	</tr>
+	
+	<tr>
+		<td><input id="btn" class="w3-ripple" type="button" value="sqrt"
+				OnClick="calc.display.value+='Math.sqrt('">
+		</td>
+		
+		<td><input id="btn" class="w3-ripple" type="button" value="ln2"
+				OnClick="calc.display.value+='Math.LN2'">
+		</td>
+		
+		<td><input id="btn" class="w3-ripple" type="button" value="ln10"
+				OnClick="calc.display.value+='Math.Log10'">
+		</td>
+		
+		<td><input id="btn" class="w3-ripple" type="button" value="l2e"
+				OnClick="calc.display.value+='Math.LOG2E'">
+		</td>
+		
+		<td><input id="btn" class="w3-ripple" type="button" value="l10e"
+				OnClick="calc.display.value+='Math.log10'">
+		</td>
+		
+		<td><input id="btn" class="w3-ripple" type="button" value="exp"
+				OnClick="calc.display.value='Math.exp('">
+		</td>
+	</tr>
+	</table>
+	</form>					
+</div>
+</body>
+<script>
+$(document).ready(function(){
+  $("#calculatoricon").click(function(){
+	$("#calculator").toggle("200");
+  });
+});
+</script>
+<script>
+$(document).ready(function(){
+  $("#newsicon").click(function(){
+    $("#news").toggle("200");
+  });
+});
+</script>
+<script>
+$(document).ready(function(){
+  $("#dashboardicon").click(function(){
+    $("#dashboard").toggle("200");
+  });
+});
+</script>
+<script>
+$(document).ready(function(){
+  $("#quicksettingsicon").click(function(){
+    $("#quicksettings").toggle("200");
+  });
+});
+</script>
+<script>
+$(document).ready(function(){
+  $("#newsclose").click(function(){
+    $("#news").toggle("200");
+  });
+});
+</script>
+<script>
+$(document).ready(function(){
+  $("#dashboardclose").click(function(){
+    $("#dashboard").toggle("200");
+  });
+});
+</script>
+<script>
+$(document).ready(function(){
+  $("#calculatorclose").click(function(){
+    $("#calculator").toggle("200");
+  });
+});
+</script>
+<script>
+setInterval(myTimer, 1000);
+
+function myTimer() {
+  const d = new Date();
+  document.getElementById("clock").innerHTML = d.toLocaleTimeString();
+}
+</script>
+
+<script>
+    window.addEventListener('load', () => {
+      registerSW();
+    });
+ 
+    // Register the Service Worker
+    async function registerSW() {
+      if ('serviceWorker' in navigator) {
+        try {
+          await navigator
+                .serviceWorker
+                .register('serviceworker.js');
+        }
+        catch (e) {
+          console.log('SW registration failed');
+        }
+      }
+    }
+ </script>
+ <script>
+	 !function(){if(!window.tooltipComponentInitiated){window.tooltipComponentInitiated=!0;var t,o,i,e,n,a=document.querySelector("body"),r={};document.addEventListener("mouseover",function(l){if(!o){var f=l.target.closest("[data-tooltip]");f&&(o=f,function(){if(o){var l,f=o.dataset;(r={tooltip:f.tooltip,position:f.tooltipPosition||"auto",zIndex:parseFloat(f.tooltipZindex)||9e149,enterDelay:parseFloat(f.tooltipEnterDelay)||0,exitDelay:parseFloat(f.tooltipExitDelay)||0,margin:parseFloat(f.tooltipMargin)||4,showDuration:parseFloat(f.tooltipShowDuration)||300,hideDuration:parseFloat(f.tooltipHideDuration)||200,transitionDistance:parseFloat(f.tooltipTransitionDistance)||10}).position=r.position.toLowerCase(),r.tooltip&&(c(),l='<div class="tooltip-box">'.concat(r.tooltip,"</div>"),a.insertAdjacentHTML("afterend",l),p(t=document.querySelector(".tooltip-box"),"zIndex",r.zIndex),function(){var i,e,n=window.innerWidth,a=d(o),l=d(t),c=a.left,s=a.top,f=l.width,m=l.height,h=a.width,w=a.height,g=r.position,v=h/2-f/2,D=w/2-m/2,x=r.margin,y=r.transitionDistance;"auto"===g&&(g=function(t){if(!t)return{};var o=t.getBoundingClientRect(),i=window.innerWidth,e=window.innerHeight,n=o.left,a=o.top,r=i-n-o.width,l=e-a-o.height;return{horizontal:n>r?"left":"right",vertical:a>l?"top":"bottom"}}(o).vertical),"top"===g?(s=s-m-x,c+=v):"right"===g?(s+=D,c=c+h+x):"left"===g?(s+=D,c=c-f-x):(s=s+w+x,c+=v),c<0?c=0:c+f>n&&(c=n-f),"top"===g?(i=s+y,e=c):"right"===g?(i=s,e=c-y):"left"===g?(i=s,e=c+y):(i=s-y,e=c);var T="translate3d(".concat(e,"px, ").concat(i,"px, 0)");p(t,"transform",T),u(t,"fromLeft",e),u(t,"fromTop",i),u(t,"top",s),u(t,"left",c),d(t)}(),clearTimeout(e),clearTimeout(n),i=setTimeout(function(){var o=s(t,"left"),i=s(t,"top"),e="translate3d(".concat(o,"px, ").concat(i,"px, 0)");p(t,"transitionDuration",r.showDuration+"ms"),p(t,"transform",e),p(t,"opacity",1)},r.enterDelay))}}())}}),document.addEventListener("mouseout",function(t){if(o){for(var i=t.relatedTarget;i;){if(i===o)return;i=i.parentNode}l()}}),document.addEventListener("touchmove",function(){l()})}function l(){(t||o)&&(clearTimeout(i),e=setTimeout(function(){if(t){var o=s(t,"fromLeft"),i=s(t,"fromTop"),e="translate3d(".concat(o,"px, ").concat(i,"px, 0)"),a=r.hideDuration;p(t,"transitionDuration",a+"ms"),p(t,"transform",e),p(t,"opacity",0),n=setTimeout(function(){c()},a)}},r.exitDelay),o=null)}function c(){t&&t.remove()}function p(t,o,i){t&&(t.style[o]=i)}function u(t,o,i){t&&(t.dataset[o]=i)}function s(t,o,i){var e=t?t.dataset[o]:"";return"number"===i?e=parseFloat(e)||0:"true"===e?e=!0:"false"===e&&(e=!1),e}function d(t){if(t){var o=t.getBoundingClientRect(),i=window.pageXOffset,e=window.pageYOffset;return{width:o.width,height:o.height,top:o.top+e,right:o.right+i,bottom:o.bottom+e,left:o.left+i}}}}();
+ </script>
+<script async src="https://cdnres.willyweather.com/widget/warning/loadView.html?id=138110" type="application/javascript"></script>
+</html>
