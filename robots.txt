@@ -2,4 +2,4 @@ Sitemap: https://fireca.vercel.app/sitemap.xml
 
 User-agent: *
 
-Disallow: /google1893b5da73e9418b.html/
+Disallow: /google1893b5da73e9418b.html
