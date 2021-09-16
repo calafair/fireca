@@ -2,7 +2,7 @@
 # Hey there!
 
 Fireca is a web desktop for your computer. It consists of the basic apps, 
-such as a calculator, dashboard, news widget, web browser, arcade, etc.
+such as a calculator, media player, news widget, web browser, arcade, etc.
 
 > ### What's the point?
 > Usually, if you have lots of browser tabs or apps open, your computer will slow down, and it might give you a headache just looking at your screen. 
@@ -32,3 +32,6 @@ Think you like it?<br>
 Visit Fireca [here](https://fireca.vercel.app), or keep scrolling to learn more.
 
 ## Demos
+
+Here's how the News app works :
+
