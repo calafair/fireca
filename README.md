@@ -29,6 +29,6 @@ your computer (and yourself).
 Here's what Fireca looks like right now (as of Sep 15, 2021):<br><br>
 ![Fireca Webtop](/fw.png "Fireca Webtop")<br><br>
 Think you like it?<br>
-Visit Fireca [here](https://fireca.vercel.app).
+Visit Fireca [here](https://fireca.vercel.app), or keep scrolling to learn more.
 
 ## Demos
