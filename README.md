@@ -17,7 +17,7 @@ your computer (and yourself).
 
 ## Upcoming Updates
 
-* Progressive Web App (PWA) support
+* Notifications
 * Developer page
   * Contribute and link to repo
   * Outline design practises used in Fireca Webtop
