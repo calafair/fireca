@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-CA">
+	<head>
     <meta content="PPWi62c6VYDKsTbPw_Gi7nETdOO2YM3i8hiCPw7vNGE" name="google-site-verification" />
     <meta charset="utf-8" />
     <meta content="IE=edge" http-equiv="X-UA-Compatible" />
@@ -63,6 +64,8 @@
             cursor: pointer;
         }
     </style>
+	</head>
+	<body>
     <div class="w3-top">
         <div class="w3-dark-grey w3-padding w3-round-small w3-card w3-bar" id="myNavbar">
             <a style="transition: 0.1s;" class="w3-ripple w3-button waves-effect w3-bar-item w3-wide" href="#home"><img alt="Fireca logo" src="https://i.ibb.co/pnGHnQ6/fileslogo.png" height="20px" width="20px"/> Fireca Technologies</a>
@@ -317,7 +320,103 @@
             <div class="w3-modal-content" style="color: #000;">
                 <div class="w3-center w3-container">
                     <span class="w3-button w3-ripple w3-display-topleft w3-hover-red w3-large" id="closedevelopermodal" style="transition: 0.1s;">↩ Back</span>
-			<iframe id="developerframe" width="100%" src="/developers.html"></iframe>
+<style>
+.bgo {background-image: url('https://www.hdnicewallpapers.com/Walls/Big/Nature%20and%20Landscape/Best_Nature_HD_Landscape_Wallpaper.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;}
+  .tooltip-box {font-family: "Roboto", Helvetica, Arial, sans-serif; border-radius: 4px; font-size: 14px; color: #fff; background: rgba(44, 62, 80, 0.65); position: absolute; top: 0; left: 0; max-width: 300px; padding: 5px 10px; opacity: 0; pointer-events: none; z-index: 9000000;}
+.sp-btn {-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;border:none;display:inline-block;padding:8px 16px;vertical-align:middle;overflow:hidden;text-decoration:none;color:inherit;text-align:center;cursor:pointer;}
+	.sp-hover-dark {backdrop-filter: blur(100px); -webkit-backdrop-filter: blur(100px); transition: 0.15s; color: white; background-color: rgba(70, 90, 101, 0.75);}
+    .sp-hover-light {backdrop-filter: blur(100px); -webkit-backdrop-filter: blur(100px); transition: 0.15s; color: black; background-color: rgba(210, 210, 210, 0.7);}
+    .sp-hover-dark:hover {background-color: rgba(140, 130, 144, 0.45);}
+    .sp-hover-light:hover {background-color: rgba(250, 250, 250, 0.65);}
+	.sp-link {text-decoration: underline; cursor: pointer; color: #2980b9;}
+	.sp-link:link {color: #2980b9;}
+    .sp-link:visited {color: #16a085;}
+    .sp-link:focus {color: rgb(60, 120, 240);}
+    .sp-link:hover {color: rgb(84, 160, 255);}
+    .sp-link:active {color: rgb(60, 130, 240);}
+</style>
+<div class="w3-container">
+<h2 class="w3-center">Fireca Developers</h2>
+  <div class="w3-row">
+    <a id="defaulttab" href="javascript:void(0)" onclick="openCity(event, 'London');">
+      <div class="w3-third w3-ripple tablink w3-center w3-bottombar w3-hover-light-grey w3-padding">Design Principles</div>
+    </a>
+    <a href="javascript:void(0)" onclick="openCity(event, 'Paris');">
+      <div class="w3-ripple w3-third tablink w3-center w3-bottombar w3-hover-light-grey w3-padding">Contribute</div>
+    </a>
+    <a href="javascript:void(0)" onclick="openCity(event, 'Tokyo');">
+      <div class="w3-ripple w3-third tablink w3-center w3-bottombar w3-hover-light-grey w3-padding">More Stuff</div>
+    </a>
+  </div>
+  <div id="London" class="w3-container city" style="display:none">
+    <h2>Spark UI</h2>
+    <p>Spark UI is a user friendly way to style your pages. We will highlight some of the most important parts of Spark design.<br>Spark is similar to Flat Design, with transitions, and hover effects. It also incorporates transparency and blurring.</p><hr>
+    <h3>Click Effects</h3>
+    <p>Spark UI click effects are subtle changes in opacity when a user clicks an element.</p><div class="w3-light-grey w3-leftbar"><code>.sp-click:active {opacity: 0.5; transition: 0.2s;}</code></div><br><br>
+    <button style="transition: 0.2s;" class="w3-hover-dark-grey w3-dark-grey w3-button w3-ripple">Click</button><br><br>
+    <hr>
+    <h3>Blurring, Transparency, and Hover Effects</h3>
+    <p>For transparency, use rgba values (red, green, blue, alpha). For the alpha value, set it to 0.7 or 0.8 and decrease to 0.4 or 5 on hover. Change the rgb values and opacity for a lighter hover effect. To blur, use backdrop-filter and -webkit-backdrop-filter (for cross-browser support). Like click effects, hover effects are subtle changes in the element's background, either a brighter or darker color. Transparency allows an element's background to be 'see-through', and blurring makes the text more readable, and still lets the element retain the colors of the background.</p>
+    <div class="w3-light-grey w3-leftbar">
+    <code>
+	.sp-hover-dark {backdrop-filter: blur(100px); -webkit-backdrop-filter: blur(100px); transition: 0.15s; color: white; background-color: rgba(70, 90, 101, 0.75);}<br><br>
+    .sp-hover-light {backdrop-filter: blur(100px); -webkit-backdrop-filter: blur(100px); transition: 0.15s; color: black; background-color: rgba(210, 210, 210, 0.7);}<br><br>
+    .sp-hover-dark:hover {background-color: rgba(140, 130, 144, 0.45);}<br><br>
+    .sp-hover-light:hover {background-color: rgba(250, 250, 250, 0.65);}
+    </code>
+    </div>
+    <br><br>
+    <p>Scroll to see the dynamic hover effects.</p>
+    <div class="bgo"><button class="sp-btn sp-hover-light">Light</button><button class="sp-btn sp-hover-dark">Dark</button></div>
+    <br><br>
+    <hr>
+    <h3>Links and Buttons</h3>
+    <p>Here's how to create a link or a button:</p>
+    <div class="w3-light-grey w3-leftbar">
+    <code>
+    .sp-link {cursor: pointer; text-decoration: underline; color: #2980b9;}<br>
+	.sp-link:link {color: #2980b9;}<br>
+    .sp-link:visited {color: #16a085;}<br>
+    .sp-link:focus {color: rgb(60, 120, 240);}<br>
+    .sp-link:hover {color: rgb(84, 160, 255);}<br>
+    .sp-link:active {color: rgb(60, 130, 240);}<br>
+    <br>
+    .sp-btn {-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;border:none;display:inline-block;padding:8px 16px;vertical-align:middle;overflow:hidden;text-decoration:none;color:inherit;text-align:center;cursor:pointer;}
+    </code>
+    </div>
+    <p>This link redirects to <a href="http://ecosia.org" class="sp-link" target="_blank">Ecosia</a>.<br><br><button class="sp-btn">This is a button</button></p>
+    <hr>
+    <h3>Other effects</h3>
+    <p>Other Spark effects include tooltips and rounded corners.</p>
+    <h4>Rounded Corners</h4>
+        <div class="w3-light-grey w3-leftbar">
+    <code>
+.sp-round-small {border-radius: 4px;}<br>
+.sp-round-medium {border-radius: 20px;}<br>
+.sp-round-large {border-radius: 100px;}<br>
+    </code>
+    </div>
+    <h4>Tooltips</h4>
+   <div class="w3-light-grey w3-leftbar">
+   <h5>Tooltip style (CSS)</h5>
+    <code>
+.tooltip-box {font-family: "Roboto", Helvetica, Arial, sans-serif; border-radius: 4px; font-size: 14px; color: #fff; background: rgba(44, 62, 80, 0.65); position: absolute; top: 0; left: 0; max-width: 300px; padding: 5px 10px; opacity: 0; pointer-events: none; z-index: 9000000;}<br>
+<h5>Tooltip script source URL (JS)</h5>
+https://fireca.vercel.app/tooltip.js
+<br>
+<h5>Toolip implementation attributes (HTML)</h5>
+data-tooltip="Tooltip text" data-tooltip-position="top"
+    </code>
+    </div>
+    <br><br>
+    <button data-tooltip="Tooltip text" data-tooltip-position="right" class="w3-round-xxlarge w3-button w3-blue w3-hover-green">Round with tooltips</button><br><br>
+    <hr>
+    <h3>Theme Palette</h3>
+    <p>Here are the URLs for the theme palettes Spark UI uses:
+   <br><a class="sp-link" href="https://flatuicolors.com/palette/ca" target="_blank">Canadian Palette</a><br><a class="sp-link" href="https://flatuicolors.com/palette/defo" target="_blank">Flat UI Colors</a><br><a class="sp-link" href="https://developer.microsoft.com/en-us/fluentui#/styles/web/colors/products" target="_blank">Fluent UI Colors</a></p>
   </div>
   <div id="Paris" class="w3-container city" style="display:none">
     <h4>There's nothing to see here!</h4>
@@ -353,6 +452,9 @@ function openCity(evt, cityName) {
         <div id="footer" style="width:100%; bottom:0;" class="w3-margin w3-center w3-transparent">
             <p class="w3-text-white">© Fireca Technologies 2021 &emsp; <a class="w3-padding w3-ripple w3-hover-shadow" href="/LICENSE" style="transition:0.2s; text-decoration:none;">MIT Licensed</a> &emsp;<a class="w3-padding w3-ripple w3-hover-shadow" id="launchdevelopermodal" style="transition:0.2s; text-decoration:none;">Fireca Developers</a></p>
         </div>
+	</body>
+<script src="https://fireca.vercel.app/tooltip.js">
+</script>
         <script>
             $(document).ready(function () {
                 $(".nocookies").click(function () {
