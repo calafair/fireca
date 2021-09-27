@@ -13,7 +13,8 @@ your computer (and yourself).
 
 * Fireca has recently been migrated to the new [Vercel site](https://fireca.vercel.app)
 * Added footer on landing page for licence, copyright, and developer link
-* Added service worker
+* Added developer page
+* New UI - Prism UI
 
 ## Upcoming Updates
 
@@ -22,7 +23,7 @@ your computer (and yourself).
   * Contribute and link to repo
   * Outline design practises used in Fireca Webtop
   * More things (for developers)
-* Update options menu
+* Update quick settings
 
 #
 
