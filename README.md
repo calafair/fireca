@@ -35,4 +35,4 @@ Visit Fireca [here](https://fireca.vercel.app), or keep scrolling to learn more.
 ## Demos
 
 Here's how the News app works :
-
+![Fireca News](/Screen%20Recording%202021-09-27%20at%204.12.58%20PM.mov "Fireca News")<br><br>
