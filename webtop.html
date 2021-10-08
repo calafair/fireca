@@ -56,6 +56,7 @@ input[type="button"]:hover{background-color: rgba(255, 255, 255, 0.2); color: wh
 #randomie {background: url('https://www.wallpapertip.com/wmimgs/168-1684937_download-google-pixel-slate-stock-wallpapers-technastic-pixel.jpg');}
 input[type="text"]{background-color: transparent; border-bottom: solid 1px white; border-left: none; border-right: none; border-top: none; width: 100%; border-collapse: collapse; color: white;}
 #bgimg {background: url('http://4.bp.blogspot.com/-o54JYSOjJqI/UZ7ElQjaobI/AAAAAAAAA_Y/37o-5OEAJvk/s1600/GeoBG_BlueCT.jpg'); min-height: 100%; background-position: center; background-size: cover;}
+.wb-full {display: none;}
 </style>
 <script>		
 		function backspace(calc) {											
@@ -157,177 +158,6 @@ under construction
 <div id="texteditor" class="texteditorapp"><div id="texteditorbar" class="unselectable">Text Editor<span id="texteditorclose" class="w3-right closebtn"><span class="ms-Icon ms-Icon--Cancel w3-ripple w3-center w3-hover-red" style="width:19.5px;"></span></span></div>
 under construction
 </div>
-<div class="w3-hide">
-<div id="calculator" class="blurr calculatorapp">
-<form name="calc">
-		<br>
-        <br>
-	<table id="calc" border="0">
-		
-	<tr>
-		<td colspan=5><input id="btn" class="w3-ripple" name="display"
-			onkeypress="return event.charCode >= 48
-			&& event.charCode <= 57" type="text">
-		</td>
-	</tr>
-	
-	<tr>
-		<td><input id="btn" class="w3-ripple" type="button" value="1"
-				OnClick="calc.display.value+='1'">
-		</td>
-		
-		<td><input id="btn" class="w3-ripple" type="button" value="2"
-				OnClick="calc.display.value+='2'">
-		</td>
-		
-		<td><input id="btn" class="w3-ripple" type="button" value="3"
-				OnClick="calc.display.value+='3'">
-		</td>
-		
-		<td><input id="btn" class="w3-ripple" type="button" value="C"
-				OnClick="calc.display.value=''">
-		</td>
-		<td><input id="btn" class="w3-ripple" type="button" value="<-"
-				OnClick="backspace(this.form)">
-		</td>
-		<td><input id="btn" class="w3-ripple" type="button" value="="
-				OnClick="calculate(this.form)">
-		</td>
-	</tr>
-	
-	<tr>
-		<td><input id="btn" class="w3-ripple" type="button" value="4"
-				OnClick="calc.display.value+='4'">
-		</td>
-		
-		<td><input id="btn" class="w3-ripple" type="button" value="5"
-				OnClick="calc.display.value+='5'">
-		</td>
-		
-		<td><input id="btn" class="w3-ripple" type="button" value="6"
-				OnClick="calc.display.value+='6'">
-		</td>
-		
-		<td><input id="btn" class="w3-ripple" type="button" value="-"
-				OnClick="calc.display.value+='-'">
-		</td>
-		
-		<td><input id="btn" class="w3-ripple" type="button" value="%"
-				OnClick="calc.display.value+='%'">
-		</td>
-		
-		<td><input id="btn" class="w3-ripple" type="button" value="cos"
-				OnClick="calc.display.value='Math.cos('">
-		</td>
-	</tr>
-	
-	<tr>
-		<td><input id="btn" class="w3-ripple" type="button" value="7"
-				OnClick="calc.display.value+='7'">
-		</td>
-		
-		<td><input id="btn" class="w3-ripple" type="button" value="8"
-				OnClick="calc.display.value+='8'">
-		</td>
-		
-		<td><input id="btn" class="w3-ripple" type="button" value="9"
-				OnClick="calc.display.value+='9'">
-		</td>
-		
-		<td><input id="btn" class="w3-ripple" type="button" value="*"
-				OnClick="calc.display.value+='*'">
-		</td>
-		
-		<td><input id="btn" class="w3-ripple" type="button" value="n!"
-				OnClick="calc.display.value+='!'">
-		</td>
-		
-		<td><input id="btn" class="w3-ripple" type="button" value="sin"
-				OnClick="calc.display.value='Math.sin('">
-		</td>
-	</tr>
-	
-	<tr>
-		<td><input id="btn" class="w3-ripple" type="button" value="."
-				OnClick="calc.display.value+='.'">
-		</td>
-		
-		<td><input id="btn" class="w3-ripple" type="button" value="0"
-				OnClick="calc.display.value+='0'">
-		</td>
-		
-		<td><input id="btn" class="w3-ripple" type="button" value=","
-				OnClick="calc.display.value+=','">
-		</td>
-		
-		<td><input id="btn" class="w3-ripple" type="button" value="+"
-				OnClick="calc.display.value+='+'">
-		</td>
-		
-		<td><input id="btn" class="w3-ripple" type="button" value="/"
-				OnClick="calc.display.value+='/'">
-		</td>
-		
-		<td><input id="btn" class="w3-ripple" type="button" value="tan"
-				OnClick="calc.display.value='Math.tan('">
-		</td>
-	</tr>
-	
-	<tr>
-		<td><input id="btn" class="w3-ripple" type="button" value="E"
-				OnClick="calc.display.value+='Math.E'">
-		</td>
-		
-		<td><input id="btn" class="w3-ripple" type="button" value="pi"
-				OnClick="calc.display.value+='Math.PI'">
-		</td>
-		
-		<td><input id="btn" class="w3-ripple" type="button" value="^"
-				OnClick="calc.display.value+='Math.pow('">
-		</td>
-		
-		<td><input id="btn" class="w3-ripple" type="button" value="("
-				OnClick="calc.display.value+='('">
-		</td>
-		
-		<td><input id="btn" class="w3-ripple" type="button" value=")"
-				OnClick="calc.display.value+=')'">
-		</td>
-		
-		<td><input id="btn" class="w3-ripple" type="button" value="log"
-				OnClick="calc.display.value='Math.log('">
-		</td>
-	</tr>
-	
-	<tr>
-		<td><input id="btn" class="w3-ripple" type="button" value="sqrt"
-				OnClick="calc.display.value+='Math.sqrt('">
-		</td>
-		
-		<td><input id="btn" class="w3-ripple" type="button" value="ln2"
-				OnClick="calc.display.value+='Math.LN2'">
-		</td>
-		
-		<td><input id="btn" class="w3-ripple" type="button" value="ln10"
-				OnClick="calc.display.value+='Math.Log10'">
-		</td>
-		
-		<td><input id="btn" class="w3-ripple" type="button" value="l2e"
-				OnClick="calc.display.value+='Math.LOG2E'">
-		</td>
-		
-		<td><input id="btn" class="w3-ripple" type="button" value="l10e"
-				OnClick="calc.display.value+='Math.log10'">
-		</td>
-		
-		<td><input id="btn" class="w3-ripple" type="button" value="exp"
-				OnClick="calc.display.value='Math.exp('">
-		</td>
-	</tr>
-	</table>
-	</form>					
-</div>
-</div>
 </body>
 <script>
 $(document).ready(function(){
@@ -345,12 +175,11 @@ $(document).ready(function(){
     background: "rgba(68, 80, 86, 1)",
     max: false,
     border: 0,
-    width: 292,
-    height: 345,
+    width: 368,
+    height: 523,
     bottom: 68,
     top: 20,
-    mount: document.getElementById("calculator")
-    					.cloneNode(true)
+    url: "https://fireca.vercel.app/calculator.html"
 });
   });
 });
