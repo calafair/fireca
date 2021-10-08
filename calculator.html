@@ -1,0 +1,215 @@
+<script src="https://code.jquery.com/jquery-2.2.4.min.js">
+</script>
+<style>
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,100);
+body {
+  font-family: Roboto, sans-serif;
+  cursor: default;
+}
+
+#calculator {
+  position: absolute;
+  overflow: hidden;
+  width: 360px;
+  background: black;
+}
+
+#bartop {
+  width: 100%;
+  height: 10px;
+  position: absolute;
+  top: 0;
+  background: #26C6DA;
+}
+
+#display {
+  width: 100%;
+  height: 160px;
+  background: rgba(240,240,240,1);
+}
+
+#displayText {
+  position: absolute;
+  height: 100px;
+  width: 180px;
+  margin: 6%;
+  font-size: 34px;
+}
+
+#buttons {
+  height: 360px;
+  width: 100%;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 100;
+}
+
+.key  span:active {opacity: 0.8;}
+
+.key {
+  height: 90px;
+  width: 270px;
+  float: left;
+}
+
+.key span {
+  float: left;
+  height: 30px;
+  width: 30px;
+  background: #434343;
+  text-align: center;
+  padding: 30px;
+}
+
+.key span:hover {
+  background: rgba(60,60,60,1);
+}
+
+.symbol {
+  height: 90px;
+  width: 30px;
+  float: left;
+}
+
+.symbol span {
+  float: left;
+  overflow: hidden;
+  height: 30px;
+  width: 36px;
+  background: #636363;
+  text-align: center;
+  padding: 21px;
+}
+
+.symbol span:hover {
+  background: rgba(90,90,90,1);
+}
+
+.symbol span:active {opacity: 0.9;}
+
+.more {
+  position: absolute;
+  height: 360px;
+  width: 272px;
+  background: rgba(130,130,130.1);
+  right: 0;
+  transition: all 0.3s;
+  transform: translateX(260px);
+}
+
+.more span {
+  color: #111;
+  float: left;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  padding: 30px;
+}
+</style>
+<div id="calculator">
+  <span id="bartop"></span>
+  <div id="display">
+    <span id="displayText"></span>
+  </div>
+  <div id="buttons">
+    <div class="key">
+      <span class="w3-ripple">7</span>
+      <span class="w3-ripple">8</span>
+      <span class="w3-ripple">9</span>
+      <span class="w3-ripple">4</span>
+      <span class="w3-ripple">5</span>
+      <span class="w3-ripple">6</span>
+      <span class="w3-ripple">1</span>
+      <span class="w3-ripple">2</span>
+      <span class="w3-ripple">3</span>
+      <span class="w3-ripple">.</span>
+      <span class="w3-ripple">0</span>
+      <span class="w3-ripple">=</span>
+    </div>
+    <div class="symbol">
+      <span class="w3-ripple">AC</span>
+      <span class="w3-ripple">&#247;</span>
+      <span class="w3-ripple">&#215;</span>
+      <span class="w3-ripple">-</span>
+      <span class="w3-ripple">+</span>
+    </div>
+    <div class="more">
+    </div>
+  </div>
+</div>
+<script>// View in fullScreen for a better view!
+
+var display = $('#displayText')[0],
+  symbol = $('.symbol'),
+  num = '',
+  input = [];
+
+$('.key span, .symbol span').click(function() {
+  if ($(this)[0].innerHTML !== '=') {
+    if ($(this)[0].innerHTML == 'AC') {
+      display.innerHTML = '';
+      clear();
+    } else {
+      display.textContent += $(this)[0].innerHTML;
+      if ($(this)[0].innerHTML == '+' || $(this)[0].innerHTML == '-' || $(this)[0].innerHTML == '÷' || $(this)[0].innerHTML == '×') {
+        input.push(num);
+        num = '';
+        if ($(this)[0].innerHTML == '÷') {
+          input.push('/');
+        } else if ($(this)[0].innerHTML == '×') {
+          input.push('*');
+        } else {
+          input.push($(this)[0].innerHTML);
+        }
+      } else {
+        num += $(this)[0].innerHTML;
+      }
+    }
+  } else {
+    if (num !== '')
+      input.push(num);
+    console.log(input);
+    if(input[0]=='' && input[1]=='-')
+      {
+      	input.shift();
+        input[1]='-'+input[1];
+        input.shift();
+      }
+    console.log(input);
+    eval(input);
+    clear();
+  }
+});
+
+function clear() {
+  input = [];
+  num = '';
+}
+
+function eval(e) {
+  var sym = '',
+    result = 0;
+  for (var i = 0; i < e.length; ++i) {
+    if (e[i] !== '+' && e[i] !== '-' && e[i] !== '*' && e[i] !== '/') {
+      if (sym == '') {
+        result = parseFloat(e[i]);
+        console.log(result);
+      } else {
+        if (sym == '+')
+          result += parseFloat(e[i]);
+        else if (sym == '-')
+          result -= parseFloat(e[i]);
+        else if (sym == '*')
+          result *= parseFloat(e[i]);
+        else
+          result /= parseFloat(e[i]);
+        sym = '';
+        console.log(result);
+      }
+    } else {
+      sym = e[i];
+      console.log(sym);
+    }
+  }
+  display.innerHTML = result.toString();
+}</script>
