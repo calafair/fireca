@@ -13,7 +13,9 @@ body {
   width: 360px;
   background: black;
 }
-
+  
+.unselectable {user-select: none; -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none;}
+  
 #bartop {
   width: 100%;
   height: 10px;
@@ -106,34 +108,34 @@ body {
   padding: 30px;
 }
 </style>
-<div id="calculator">
+<div id="calculator" class="unselectable">
   <span id="bartop"></span>
   <div id="display">
     <span id="displayText"></span>
   </div>
-  <div id="buttons">
-    <div class="key">
-      <span class="w3-ripple">7</span>
-      <span class="w3-ripple">8</span>
-      <span class="w3-ripple">9</span>
-      <span class="w3-ripple">4</span>
-      <span class="w3-ripple">5</span>
-      <span class="w3-ripple">6</span>
-      <span class="w3-ripple">1</span>
-      <span class="w3-ripple">2</span>
-      <span class="w3-ripple">3</span>
-      <span class="w3-ripple">.</span>
-      <span class="w3-ripple">0</span>
-      <span class="w3-ripple">=</span>
+  <div id="buttons" class="unselectable">
+    <div class="key unselectable">
+      <span class="unselectable">7</span>
+      <span class="unselectable">8</span>
+      <span class="unselectable">9</span>
+      <span class="unselectable">4</span>
+      <span class="unselectable">5</span>
+      <span class="unselectable">6</span>
+      <span class="unselectable">1</span>
+      <span class="unselectable">2</span>
+      <span class="unselectable">3</span>
+      <span class="unselectable">.</span>
+      <span class="unselectable">0</span>
+      <span class="unselectable">=</span>
     </div>
-    <div class="symbol">
-      <span class="w3-ripple">AC</span>
-      <span class="w3-ripple">&#247;</span>
-      <span class="w3-ripple">&#215;</span>
-      <span class="w3-ripple">-</span>
-      <span class="w3-ripple">+</span>
+    <div class="symbol unselectable">
+      <span class="unselectable">AC</span>
+      <span class="unselectable">&#247;</span>
+      <span class="unselectable">&#215;</span>
+      <span class="unselectable">-</span>
+      <span class="unselectable">+</span>
     </div>
-    <div class="more">
+    <div class="more unselectable">
     </div>
   </div>
 </div>
