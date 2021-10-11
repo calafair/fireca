@@ -22,7 +22,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <link rel="shortcut icon" type="image/png" href="https://image.flaticon.com/icons/png/512/141/141731.png"/>
 <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css"/>
 <style>
-.tooltip-box {backdrop-filter: blur(99px); -webkit-backdrop-filter: blur(99px); font-family: "Roboto", Helvetica, Arial, sans-serif; border-radius: 2px; font-size: 14px; color: #fff; background: rgba(44, 62, 80, 0.65); position: absolute; top: 0; left: 0; max-width: 300px; padding: 5px 10px; opacity: 0; pointer-events: none; z-index: 900000000000000000000000000000000000000000000000000000000000000000000000000000000000;}
+.tooltip-box {backdrop-filter: blur(99px); -webkit-backdrop-filter: blur(99px); font-family: "Roboto", Helvetica, Arial, sans-serif; border-radius: 2px; font-size: 14px; color: #fff; background: rgba(44, 62, 80, 0.65); position: absolute; top: 0; left: 0; max-width: 300px; padding: 5px 10px; opacity: 0; pointer-events: none; z-index: 90000000000000000000000000000000000000000000000000000000000;}
 body, h1 {font-family: "Roboto", Helvetica, Arial, sans-serif;}
 .raleway {font-family: "Roboto", Helvetica, Arial, sans-serif;}
 .blurr {-webkit-backdrop-filter: blur(99px); backdrop-filter: blur(99px);}
@@ -40,7 +40,7 @@ body, html {height: 100%}
 #calculator {position: absolute; z-index: 9; background-color: transparent; text-align: center;}
 #calculatorbar {padding: 10px; z-index: 10; cursor: default; background-color: rgba(38, 50, 56, 0.5); color: #fff;}
 .bblur {backdrop-filter: blur(99px); -webkit-backdrop-filter: blur(99px); border-radius: 15px; width: 30%; cursor: default; background-color: rgba(38, 50, 56, 0.5);}
-.navbar {backdrop-filter: blur(99px); background-color: rgba(38, 50, 56, 0.5); -webkit-backdrop-filter: blur(99px); position: fixed; bottom: 0; width: 100%; z-index: 9000000000000000000000000000000000000000000000000000000000000;}
+.navbar {backdrop-filter: blur(99px); background-color: rgba(38, 50, 56, 0.5); -webkit-backdrop-filter: blur(99px); position: fixed; bottom: 0; width: 100%; z-index: 90000000000000000000000000000000000000000;}
 .navbar a {color: #f2f2f2; display: block; text-align: center; padding: 10px 10px; text-decoration: none; font-size: 1px; transition: 0.15s;}
 .navbar a:hover {background: rgba(255, 255, 255, 0.05);}
 .closebtn {vertical-align: subalign; width: 20px;}
@@ -50,9 +50,9 @@ body, html {height: 100%}
 #calc{background-color: rgba(38, 50, 56, 0.65);}
 input[type="button"]{background-color: transparent; color: white; border: none; width: 100%; border-collapse: collapse;}
 input[type="button"]:hover{background-color: rgba(255, 255, 255, 0.2); color: white;}
-#randomie {background: url('https://www.wallpapertip.com/wmimgs/168-1684937_download-google-pixel-slate-stock-wallpapers-technastic-pixel.jpg');}
+#randomie {background: url('https://www.wallpapertip.com/wmimgs/168-1684937_download-google-pixel-slate-stock-wallpapers-technastic-pixel.jpg http://4.bp.blogspot.com/-o54JYSOjJqI/UZ7ElQjaobI/AAAAAAAAA_Y/37o-5OEAJvk/s1600/GeoBG_BlueCT.jpg');}
 input[type="text"]{background-color: transparent; border-bottom: solid 1px white; border-left: none; border-right: none; border-top: none; width: 100%; border-collapse: collapse; color: white;}
-#bgimg {background: url('http://4.bp.blogspot.com/-o54JYSOjJqI/UZ7ElQjaobI/AAAAAAAAA_Y/37o-5OEAJvk/s1600/GeoBG_BlueCT.jpg'); min-height: 100%; background-position: center; background-size: cover; background-repeat: no-repeat;}
+#bgimg {background: url('https://oswallpapers.com/wp-content/uploads/2016/06/desktop.jpg'); min-height: 100%; background-position: center; background-size: cover; background-repeat: no-repeat;}
 .wb-full {display: none;}
 #loader {
 position: absolute;
@@ -76,12 +76,104 @@ animation: spin 2s linear infinite;
 0% { transform: rotate(0deg); }
 100% { transform: rotate(360deg); }
 }
+.contextMenu *,
+::before,
+::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	height: 100vh;
+    backdrop-filter: blur(99px);
+	background-image: url('https://oswallpapers.com/wp-content/uploads/2016/06/desktop.jpg');
+	background-position: center bottom;
+	background-size: cover;
+	overflow: hidden;
+}
+.contextMenu {
+	box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15),
+		0 6px 16px 2px rgba(0, 0, 0, 0.5);
+	background-color: rgba(35, 35, 35, 0.65);
+	backdrop-filter: blur(99px);
+	color: #fff;
+	font: 14px "Segoe UI", Roboto, sans-serif;
+	font-weight: 300;
+	padding: 4px 0;
+}
+.contextMenu li {
+	padding: 0 16px;
+	height: 30px;
+	line-height: 30px;
+	user-select: none;
+}
+.contextMenu li:hover {
+	background-color: rgba(255, 255, 255, 0.15);
+}
+.contextMenu li:active {
+	background-color: rgba(255, 255, 255, 0.2);
+}
+.contextMenu li.separator {
+	height: 1px;
+	background-color: rgba(255, 255, 255, 0.15);
+	margin: 4px 0;
+}
+.contextMenu li.disable {
+	opacity: 0.4;
+	pointer-events: none;
+}
+:root {
+	--ctxmenu-max-height: auto;
+}
+.contextMenu {
+	min-width: 256px;
+	height: var(--ctxmenu-max-height);
+	position: absolute;
+	overflow: hidden;
+	top: 1px;
+	left: 1px;
+	pointer-events: none;
+	opacity: 0;
+    z-index: 900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
+}
+.contextMenu.anime {
+	animation: show 0.6s forwards;
+	animation-timing-function: cubic-bezier(0, 1, 0, 1);
+}
+.contextMenu.down ul {
+	animation: showDown 0.6s forwards;
+	animation-timing-function: cubic-bezier(0, 1, 0, 1);
+}
+.contextMenu.visible {
+	max-height: 0;
+}
+@keyframes show {
+	0%,
+	1% {
+		opacity: 0;
+		max-height: calc(var(--ctxmenu-max-height) / 2);
+	}
+	100% {
+		max-height: var(--ctxmenu-max-height);
+		pointer-events: initial;
+		opacity: 1;
+	}
+}
+@keyframes showDown {
+	0%,
+	1% {
+		transform: translatey(calc(var(--ctxmenu-max-height) * -1 / 2));
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
 </style>
 <script>
 var myVar;
 
 function myFunction() {
-myVar = setTimeout(showPage, 1500);
+myVar = setTimeout(showPage, 800);
 }
 
 function showPage() {
@@ -91,9 +183,15 @@ document.getElementById("loader").style.display = "none";
 }
 </script>
 </head>
-<body onload="myFunction()">
+<body onload="myFunction()" class="area" data-contextmenu="desktop">
 <div id="loader"></div>
 <bod id="webtopos" class="w3-hide">
+<div class="contextMenu">
+		<ul>
+			<li class="separator"></li>
+			<li>foo</li>
+		</ul>
+	</div>
 <div id="bgimg" class="w3-display-container w3-animate-opacity w3-text-white">
 <a style="text-decoration:none; cursor:pointer;" id="quicksettingsicon" class="w3-ripple w3-small unselectable">&nbsp;<span class="ms-Icon ms-Icon--CircleHalfFull">
 </span></a>
@@ -132,6 +230,152 @@ under construction
 </div>
 </bod>
 </body>
+<script>
+function cp(name, value) {
+	return value == null ?
+		getComputedStyle(document.documentElement).getPropertyValue(name) :
+		document.documentElement.style.setProperty(name, value)
+}
+function createElement(tag, classes, appendElement) {
+	const newElement = document.createElement(tag)
+	if(classes) newElement.classList.add(...classes.split(" "))
+	if(appendElement) appendElement.append(newElement)
+	return newElement
+}
+// -------------------------------------------------- //
+
+function createContextMenu(menuData, isSubmenu) {
+	// I create the context menu and the list inside it (and check if its submenu)
+	const menu = createElement('div', isSubmenu?'contextMenu submenu':'contextMenu')
+	const list = createElement('ul', false, menu)
+
+	// Now we loop through the array/objects to create the items inside
+	for(let i = 0; i < menuData.length; i++) {
+		console.log(menuData[i])
+		// Check if the object is valid or skip it
+		if(Object.keys(menuData[i]).length <= 0) continue		
+		
+		// We create the list element aka context menu item
+		let listElement = createElement('li', null, list)
+		
+		// If it is a separator, I skip the rest since it's unnecesary
+		if(menuData[i].type === 'separator') {
+			listElement.classList.add('separator')
+			continue
+		}
+		// Add title
+		if(menuData[i].hasOwnProperty('title')) listElement.innerText = menuData[i].title
+		
+		// Here should be a switch
+		// If it's a regular element, just title and things
+		if(menuData[i].type === 'regular') {
+			listElement.classList.add('regular')
+		}
+		
+		// If it's a expandable element, give necessary classes
+		if(menuData[i].type === 'expandable') {
+			 listElement.classList.add('expandable')
+		 }
+	
+		// If disable
+		if(menuData[i].disable) listElement.classList.add('disable')
+		// If it has submenu, we add the neccesary function to open it (WIP)
+		// if(menuData[i].hasOwnProperty('submenu')) {}
+		
+	}//end-loop
+	
+	// To close it
+	document.addEventListener('mousedown', ev => {
+		if (!ev.target.closest('.contextMenu')) removeContextMenu(ev, menu)
+	});
+	document.addEventListener('keydown', ev => { 
+		if (ev.key == 'Escape') removeContextMenu(ev, menu)
+	 });
+
+	return menu
+}
+
+function showContextMenu(ev, isSubmenu) {
+	console.log()
+	ev.preventDefault()
+	if(ev.target.closest('.contextMenu')) return
+	// Element where click is made
+	const ownerElement = ev.target.closest('[data-contextmenu]')
+	const dataMenu     = ownerElement.getAttribute('data-contextmenu')
+	// We create the (sub)menu 
+	isSubmenu = isSubmenu || false
+	const contextMenu = createContextMenu(contextMenuData[dataMenu], isSubmenu)
+	document.body.append(contextMenu)
+	// contextMenuData
+	
+	// Show
+	cp('--ctxmenu-max-height', 'auto')
+	// If animation direction should is or not down
+	let isDown,
+		 menuRect = contextMenu.getBoundingClientRect()
+	
+	cp('--ctxmenu-max-height', menuRect.height + 'px')
+	contextMenu.classList.add('visible')
+	
+	// X
+	if(ev.x <= 0) contextMenu.style.left = '1px'
+	else if((ev.x + menuRect.width) > window.innerWidth) contextMenu.style.left = window.innerWidth - menuRect.width - 1 +'px'
+	else contextMenu.style.left = ev.x + 'px'
+	// Y
+	if((ev.y + menuRect.height) > window.innerHeight) {
+		contextMenu.style.top = "initial"
+		
+		// Test if overflow top
+		if((ev.y - menuRect.height) < 0) {
+			contextMenu.style.bottom  = (window.innerHeight - menuRect.height) - 1 + 'px'	
+		} else {
+			contextMenu.style.bottom  = (window.innerHeight - ev.y) + 'px'
+		}
+		
+		isDown = false
+	}
+	else {
+		contextMenu.style.top  = ev.y + 'px'
+		contextMenu.style.bottom  = ""
+		isDown = true
+	}
+	
+	contextMenu.classList.remove('down')
+	contextMenu.classList.remove('anime')
+	if(isDown) setTimeout(ev => contextMenu.classList.add('down'), 100)
+	setTimeout(ev => contextMenu.classList.add('anime'), 100)
+}
+
+function removeContextMenu(ev, menu) {
+	menu.remove()
+}
+document.addEventListener('contextmenu', showContextMenu)
+
+// -------------------------------------------------- //
+const contextMenuData = {
+	desktop: [
+		{},
+		{
+			type: 'expandable',
+			title: 'Overview',
+			disable: false,
+			submenu: [],
+		}, { type: 'separator' }, {
+			type: 'regular',
+			title: 'Show Desktop',
+			disable: false,
+		}, {
+			type: 'regular',
+			title: 'Foo',
+			disable: true,
+		}, { type: 'separator' }, {
+			type: 'regular',
+			title: 'Bar',
+			disable: true,
+		},
+	],
+}
+</script>
 <script>
 $(document).ready(function(){
 $("#texteditoricon").click(function(){
