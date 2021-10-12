@@ -54,6 +54,13 @@ input[type="button"]:hover{background-color: rgba(255, 255, 255, 0.2); color: wh
 input[type="text"]{background-color: transparent; border-bottom: solid 1px white; border-left: none; border-right: none; border-top: none; width: 100%; border-collapse: collapse; color: white;}
 #bgimg {background: url('https://oswallpapers.com/wp-content/uploads/2016/06/desktop.jpg'); min-height: 100%; background-position: center; background-size: cover; background-repeat: no-repeat;}
 .wb-full {display: none;}
+.wb-min:hover {background-color: #f39c12;}
+.wb-max:hover {background-color: #27ae60;}
+.wb-close:hover {background-color: #e74c3c;}
+.wb-min:active {opacity: 0.5;}
+.wb-max:active {opacity: 0.5;}
+.wb-close:active {opacity: 0.5;}
+.wb-title {font-family: "Roboto", Helvetica, Arial, sans-serif; user-select: none; -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none;}
 #loader {
 position: absolute;
 left: 50%;
@@ -106,6 +113,9 @@ body {
 	height: 30px;
 	line-height: 30px;
 	user-select: none;
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select: none;
 }
 .contextMenu li:hover {
 	background-color: rgba(255, 255, 255, 0.15);
@@ -405,7 +415,19 @@ url: "https://fireca.vercel.app/calculator.html"
 <script>
 $(document).ready(function(){
 $("#newsicon").click(function(){
-$("#news").toggle("200");
+new WinBox({
+
+title: "News",
+background: "rgba(68, 80, 86, 1)",
+class: ["no-resize"],
+max: false,
+border: 0,
+width: 300,
+height: 435,
+bottom: 69,
+top: 20,
+url: "https://www.feedgrabbr.com/inframe/?widgetid=d32389d31abdbb9f254b29643"
+});
 });
 });
 </script>
@@ -427,13 +449,6 @@ $("#quicksettings").toggle("200");
 $(document).ready(function(){
 $("#texteditorclose").click(function(){
 $("#texteditor").toggle("200");
-});
-});
-</script>
-<script>
-$(document).ready(function(){
-$("#newsclose").click(function(){
-$("#news").toggle("200");
 });
 });
 </script>
