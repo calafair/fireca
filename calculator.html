@@ -212,4 +212,8 @@ function AutoCalc() {
   setInterval(AutoCalc, 2500);
 }*/
 
-function Delete() {var str = document.getElementById("display");str.value = str.value.slice(0, -1);}</script>
+function Delete() {var str = document.getElementById("display");str.value = str.value.slice(0, -1);}
+  document.addEventListener("contextmenu", function(e){
+    e.preventDefault();
+}, false);
+</script>
