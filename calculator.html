@@ -1,217 +1,215 @@
-<script src="https://code.jquery.com/jquery-2.2.4.min.js">
-</script>
+<!--<body onload="AutoCalc()">-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
 <style>
-@import url(https://fonts.googleapis.com/css?family=Roboto:300,100);
-body {
-  font-family: Roboto, sans-serif;
-  cursor: default;
+* {transition: background-color 0.1s;}
+body {line-height: 1; margin: 0px; background: rgba(42,40,61,1);}
+input:focus {outline: 0;}
+ul {list-style: none;}
+input[type="button"]:active {opacity: 0.5;}
+.digit:hover {
+  background-color: rgba(48, 47, 67, 0.8);
+  border: 1px solid rgba(78,77,92,0.8);
+}
+.bottomoper:hover {
+  background-color: rgba(48, 47, 67, 0.8);
+  border: 1px solid rgba(78,77,92,1);
+}
+.standardkeys:hover {
+  background-color: rgba(217,219,199,0.8);
+  border: 1px solid rgba(177,178,163,0.8);
+}
+#equal:hover {background-color: rgba(38,36,56,0.8) !important; border: 1px solid rgba(78,77,92,0.8) !important;}
+.digit {
+  color: white !important;
+}
+.bottomoper {
+  color: white !important;
+}
+.standardkeys {
+  color: white !important;
+}
+#case {text-align: center; height: 100vh;}
+
+#resultbox {
+  vertical-align: middle;
+  padding-right: 20px;
+  padding-left: 10px;
+  background-color: rgba(48,46,67,0.8);
+  height: 20%;
 }
 
-#calculator {
-  position: absolute;
-  overflow: hidden;
-  width: 360px;
-  background: black;
-}
-  
-.unselectable {user-select: none; -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none;}
-  
-#bartop {
+#display, #display1 {
   width: 100%;
-  height: 10px;
-  position: absolute;
-  top: 0;
-  background: #26C6DA;
-}
-
-#display {
-  width: 100%;
-  height: 120px;
-  background: rgba(240,240,240,1);
-}
-
-#displayText {
-  position: absolute;
-  height: 100px;
-  width: 180px;
-  margin: 6%;
-  font-size: 34px;
-}
-
-#buttons {
-  height: 360px;
-  width: 100%;
-  color: #fff;
-  font-size: 25px;
+  text-align: right;
+  background-color: rgba(48,46,67,0.8);
+  border: none;
+  color: white;
+  font-family: "Roboto", sans-serif;
   font-weight: 100;
 }
 
-.key  span:active {opacity: 0.8;}
-
-.key {
-  height: 90px;
-  width: 270px;
-  float: left;
+#display {
+  font-size: 1.5rem;
+  height: 35%;
 }
 
-.key span {
-  float: left;
-  height: 30px;
-  width: 30px;
-  background: #434343;
-  text-align: center;
-  padding: 30px;
+#display1 {
+  font-size: 3rem;
+  height: 60%;
 }
 
-.key span:hover {
-  background: rgba(60,60,60,1);
+.digit, .bottomoper {
+  font-size: 1.4rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  background-color: transparent;
+  height: 14%;
+  width: 30%;
+  display: inline-block;
+  border: none;
+  color: #575757;
 }
 
-.symbol {
-  height: 90px;
-  width: 30px;
-  float: left;
+.oper {
+  font-size: 2rem;
+  background-color: transparent;
+  height: 55px;
+  width: 20%;
+  border: 1px solid white;
+  display: inline-block;
+  padding: 5px;
 }
 
-.symbol span {
-  float: left;
-  overflow: hidden;
-  height: 30px;
-  width: 36px;
-  background: #636363;
-  text-align: center;
-  padding: 21px;
+.standardkeys {
+  font-size: 2rem;
+  background-color: transparent;
+  width: 18%;
+  height: 100%;
+  display: inline-block;
+  border: none;
+  color: white;
 }
 
-.symbol span:hover {
-  background: rgba(90,90,90,1);
+#standardkeyswrap {
+  width: 100%;
+  margin: 0px;
+  height: 10%;
+  background-color: rgba(46,44,65,1);
 }
 
-.symbol span:active {opacity: 0.9;}
-
-.more {
-  position: absolute;
-  height: 360px;
-  width: 272px;
-  background: rgba(130,130,130.1);
-  right: 0;
-  transition: all 0.3s;
-  transform: translateX(260px);
+#plus {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTE5LDEzSDEzVjE5SDExVjEzSDVWMTFIMTFWNUgxM1YxMUgxOVYxM1oiIC8+PC9zdmc+');
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-filter: invert(1);
+  filter: invert(1);
 }
 
-.more span {
-  color: #111;
-  float: left;
-  height: 30px;
-  width: 30px;
-  text-align: center;
-  padding: 30px;
+#minus {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTE5LDEzSDVWMTFIMTlWMTNaIiAvPjwvc3ZnPg==');
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+
+#divide {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTE5LDEzSDVWMTFIMTlWMTNNMTIsNUEyLDIgMCAwLDEgMTQsN0EyLDIgMCAwLDEgMTIsOUEyLDIgMCAwLDEgMTAsN0EyLDIgMCAwLDEgMTIsNU0xMiwxNUEyLDIgMCAwLDEgMTQsMTdBMiwyIDAgMCwxIDEyLDE5QTIsMiAwIDAsMSAxMCwxN0EyLDIgMCAwLDEgMTIsMTVaIiAvPjwvc3ZnPg==');
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+
+#multiply {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTE5LDYuNDFMMTcuNTksNUwxMiwxMC41OUw2LjQxLDVMNSw2LjQxTDEwLjU5LDEyTDUsMTcuNTlMNi40MSwxOUwxMiwxMy40MUwxNy41OSwxOUwxOSwxNy41OUwxMy40MSwxMkwxOSw2LjQxWiIgLz48L3N2Zz4=');
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+
+.reveal:hover::before {
+    background-color: hsla(240, 0%, 50%, 0.3);
+}
+
+.reveal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    
+    border: 2px solid hsla(240, 0%, 100%, 0.5);
+    
+    mask-image: radial-gradient(circle closest-side, white, transparent);
+    mask-origin: border-box;
+    mask-position: inherit;
+    mask-size: inherit;
+    mask-repeat: space;
 }
 </style>
-<div id="calculator" class="unselectable">
-  <span id="bartop"></span>
-  <div id="display">
-    <span id="displayText"></span>
+<div name="case" id="case">
+  <div id="resultbox">
+    <input name="display" id="display" value="">
+    <input name="display1" id="display1" value="" disabled>
   </div>
-  <div id="buttons" class="unselectable">
-    <div class="key unselectable">
-      <span class="unselectable">7</span>
-      <span class="unselectable">8</span>
-      <span class="unselectable">9</span>
-      <span class="unselectable">4</span>
-      <span class="unselectable">5</span>
-      <span class="unselectable">6</span>
-      <span class="unselectable">1</span>
-      <span class="unselectable">2</span>
-      <span class="unselectable">3</span>
-      <span class="unselectable">.</span>
-      <span class="unselectable">0</span>
-      <span class="unselectable">=</span>
-    </div>
-    <div class="symbol unselectable">
-      <span class="unselectable">AC</span>
-      <span class="unselectable">&#247;</span>
-      <span class="unselectable">&#215;</span>
-      <span class="unselectable">-</span>
-      <span class="unselectable">+</span>
-    </div>
-    <div class="more unselectable">
-    </div>
+  <div id="standardkeyswrap">
+    <input type="button" id="plus" class="standardkeys" value="&nbsp;" onclick="Plus()">
+    <input type="button" id="minus" class="standardkeys" value="&nbsp;" onclick="Minus()">
+    <input type="button" id="multiply" class="standardkeys" value="&nbsp;" onclick="Multiply()">
+    <input type="button" id="divide" class="standardkeys" value="&nbsp;" onclick="Divide()">
+    <input type="button" id="equal" class="standardkeys" value="=" onclick="Equals()">
   </div>
+
+  <input type="button" id="leftbracket" class="bottomoper" value="(" onclick="LeftBracket()">
+  <input type="button" id="rightbracket" class="bottomoper" value=")" onclick="RightBracket()">
+  <input type="button" id="del" class="bottomoper" value="DEL" onclick="Delete()">
+
+  <input type="button" class="digit" value="7" onclick="number7()">
+  <input type="button" class="digit" value="8" onclick="number8()">
+  <input type="button" class="digit" value="9" onclick="number9()">
+
+  <input type="button" class="digit" value="4" onclick="number4()">
+  <input type="button" class="digit" value="5" onclick="number5()">
+  <input type="button" class="digit" value="6" onclick="number6()">
+
+  <input type="button" class="digit" value="1" onclick="number1()">
+  <input type="button" class="digit" value="2" onclick="number2()">
+  <input type="button" class="digit" value="3" onclick="number3()">
+
+  <input type="button" id="clearMem" class="bottomoper" value="C" onclick="Clear()">
+  <input type="button" class="digit" value="0" onclick="number0()">
+
+  <input type="button" id="dot" class="bottomoper" value="&bull;" onclick="Dot()">
 </div>
-<script>// View in fullScreen for a better view!
+<script>function number1() {document.getElementById("display").value += "1"};
+function number2() {document.getElementById("display").value += "2"};
+function number3() {document.getElementById("display").value += "3"};
+function number4() {document.getElementById("display").value += "4"};
+function number5() {document.getElementById("display").value += "5"};
+function number6() {document.getElementById("display").value += "6"};
+function number7() {document.getElementById("display").value += "7"};
+function number8() {document.getElementById("display").value += "8"};
+function number9() {document.getElementById("display").value += "9"};
+function number0() {document.getElementById("display").value += "0"};
+function Plus() {document.getElementById("display").value += " + "};
+function Minus() {document.getElementById("display").value += " - "};
+function Divide() {document.getElementById("display").value += " / "};
+function Multiply() {document.getElementById("display").value += " * "};
+function Dot() {document.getElementById("display").value += "."};
+function LeftBracket() {document.getElementById("display").value += "("};
+function RightBracket() {document.getElementById("display").value += ")"};
+function Clear() {  document.getElementById("display").value = "";document.getElementById("display1").value = "";};
+function Equals() {var equals = eval(document.getElementById("display").value);document.getElementById("display1").value = equals;}
+/*
+function AutoCalc() {
+  var equals = eval(document.getElementById("display").value);
+  document.getElementById("display1").value = equals;
+  setInterval(AutoCalc, 2500);
+}*/
 
-var display = $('#displayText')[0],
-  symbol = $('.symbol'),
-  num = '',
-  input = [];
-
-$('.key span, .symbol span').click(function() {
-  if ($(this)[0].innerHTML !== '=') {
-    if ($(this)[0].innerHTML == 'AC') {
-      display.innerHTML = '';
-      clear();
-    } else {
-      display.textContent += $(this)[0].innerHTML;
-      if ($(this)[0].innerHTML == '+' || $(this)[0].innerHTML == '-' || $(this)[0].innerHTML == '÷' || $(this)[0].innerHTML == '×') {
-        input.push(num);
-        num = '';
-        if ($(this)[0].innerHTML == '÷') {
-          input.push('/');
-        } else if ($(this)[0].innerHTML == '×') {
-          input.push('*');
-        } else {
-          input.push($(this)[0].innerHTML);
-        }
-      } else {
-        num += $(this)[0].innerHTML;
-      }
-    }
-  } else {
-    if (num !== '')
-      input.push(num);
-    console.log(input);
-    if(input[0]=='' && input[1]=='-')
-      {
-      	input.shift();
-        input[1]='-'+input[1];
-        input.shift();
-      }
-    console.log(input);
-    eval(input);
-    clear();
-  }
-});
-
-function clear() {
-  input = [];
-  num = '';
-}
-
-function eval(e) {
-  var sym = '',
-    result = 0;
-  for (var i = 0; i < e.length; ++i) {
-    if (e[i] !== '+' && e[i] !== '-' && e[i] !== '*' && e[i] !== '/') {
-      if (sym == '') {
-        result = parseFloat(e[i]);
-        console.log(result);
-      } else {
-        if (sym == '+')
-          result += parseFloat(e[i]);
-        else if (sym == '-')
-          result -= parseFloat(e[i]);
-        else if (sym == '*')
-          result *= parseFloat(e[i]);
-        else
-          result /= parseFloat(e[i]);
-        sym = '';
-        console.log(result);
-      }
-    } else {
-      sym = e[i];
-      console.log(sym);
-    }
-  }
-  display.innerHTML = result.toString();
-}</script>
+function Delete() {var str = document.getElementById("display");str.value = str.value.slice(0, -1);}</script>
