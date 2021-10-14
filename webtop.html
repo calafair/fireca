@@ -52,6 +52,7 @@ input[type="text"]{background-color: transparent; border-bottom: solid 1px white
 #bgimg {background: url('https://oswallpapers.com/wp-content/uploads/2016/06/desktop.jpg'); min-height: 100%; background-position: center; background-size: cover; background-repeat: no-repeat;}
 @keyframes popup{0%{transform:scale(.8)}to{transform:scale(1)}}
 .winbox {backdrop-filter: blur(10rem); -webkit-backdrop-filter: blur(10rem); animation: popup .3s cubic-bezier(.3,1,.3,1) backwards; transition: 0.2s;}
+.wb-body {background-color: rgba(38,38,38,0.4)}
 .wb-full {display: none;}
 .wb-min:hover {background-color: #f39c12;}
 .wb-max:hover {background-color: #27ae60;}
@@ -60,13 +61,14 @@ input[type="text"]{background-color: transparent; border-bottom: solid 1px white
 .wb-max:active {opacity: 0.5;}
 .wb-close:active {opacity: 0.5;}
 .wb-title {font-family: "Roboto", Helvetica, Arial, sans-serif; user-select: none; -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none;}
-.navbar a {color: white; display: block; text-align: center; padding: 3px 10px !important; padding-bottom: 0px !important; text-decoration: none; font-size: 26px; transition: 0.15s;}
+.navbar a {color: white; display: flex; align-items: center; text-align: center; padding: 3px 10px !important; padding-bottom: 0px !important; text-decoration: none; font-size: 26px; transition: 0.15s;}
 .navbar a:hover {background: rgba(255, 255, 255, 0.1) !important;}
 .navbar a:active {opacity: 0.5 !important; transform: scale(1.2);}
 #launchericon:hover {color: white !important;}
 #dashboardicon:hover {color: #2980b9 !important;}
 #interwebicon:hover {color: #27ae60 !important;}
 #settingsicon:hover {color: #e74c3c !important;}
+#weathericon:hover {color: #2980b9 !important;}
 #calculatoricon:hover {color: #e67e22 !important;}
 #texteditoricon:hover {color: #9b59b6 !important;}
 #imagesicon:hover {color: #f1c40f !important;}
@@ -99,6 +101,7 @@ animation: spin 2s linear infinite;
 0% { transform: rotate(0deg); }
 100% { transform: rotate(360deg); }
 }
+.contentMenu * {900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 !important;}
 .contextMenu *,
 ::before,
 ::after {
@@ -118,7 +121,7 @@ body {
 .contextMenu {
 	box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15),
 		0 6px 16px 2px rgba(0, 0, 0, 0.5);
-	background-color: rgba(35, 35, 35, 0.65);
+	background-color: rgba(32, 32, 32, 0.65);
 	backdrop-filter: blur(10rem);
     -webkit-backdrop-filter: blur(10rem);
 	color: #fff;
@@ -223,7 +226,7 @@ document.getElementById("loader").style.display = "none";
 <div id="bgimg" class="w3-display-container w3-animate-opacity w3-text-white">
 <a style="text-decoration:none; cursor:pointer;" id="quicksettingsicon" class="w3-ripple w3-small unselectable">&nbsp;<span class="ms-Icon ms-Icon--CircleHalfFull w3-right">
 </span></a>
-<div id="quicksettings">Quick Settings</div>
+<div class="w3-right" id="quicksettings">Quick Settings</div>
 <div class="w3-display-middle bblur unselectable">
 <h1 class="w3-jumbo w3-animate-top w3-center" id="clock"> </h1>
 <hr class="w3-border-grey" style="margin:auto; width:40%">
@@ -231,25 +234,27 @@ document.getElementById("loader").style.display = "none";
 </div>
 <div class="w3-bottom navbar">
   <div class="w3-bar w3-padding-small">
-  <a href="#" style="color: white;" id="launchericon" data-tooltip="Launcher" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--CubeShape">
+  <a style="color: white;" id="launchericon" data-tooltip="Launcher" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--CubeShape">
 </span></a>
   <div id="flexcenter">
-    <a href="#" style="color: #2980b9; font-size: 27px;" id="dashboardicon" data-tooltip="Dashboard" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--SpeedHigh">
+    <a style="color: #2980b9; font-size: 27px;" id="dashboardicon" data-tooltip="Dashboard" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--SpeedHigh">
 </span></a>
-    <a href="#" style="color: #27ae60;" id="interwebicon" data-tooltip="InterWeb" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--Globe">
+    <a style="color: #27ae60;" id="interwebicon" data-tooltip="InterWeb" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--Globe">
 </span></a>
-    <a href="#" style="color: #e74c3c;" id="settingsicon" data-tooltip="Settings" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--Settings">
+    <a style="color: #e74c3c;" id="settingsicon" data-tooltip="Settings" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--Settings">
 </span></a>
-	<a href="#" style="color: #e67e22;" id="calculatoricon" data-tooltip="Calculator" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--Calculator">
+	<a style="color: #2980b9;" id="weathericon" data-tooltip="Weather" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--RainShowersDay">
 </span></a>
-	<a href="#" style="color: #9b59b6;" id="texteditoricon" data-tooltip="Text Editor" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--TextDocument">
+	<a style="color: #e67e22;" id="calculatoricon" data-tooltip="Calculator" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--Calculator">
 </span></a>
-	<a href="#" style="color: #f1c40f;" id="imagesicon" data-tooltip="Images" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--PictureCenter">
+	<a style="color: #9b59b6;" id="texteditoricon" data-tooltip="Text Editor" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--TextDocument">
 </span></a>
-	<a href="#" style="color: #c7ecee;" id="newsicon" data-tooltip="News" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--News">
+	<a style="color: #f1c40f;" id="imagesicon" data-tooltip="Images" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--PictureCenter">
 </span></a>
-	<a href="#" style="color: #6ab04c;" id="arcadeicon" data-tooltip="Arcade" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--Game">
-    <a style="visibility: hidden;">06:53:01 </a>
+	<a style="color: #c7ecee;" id="newsicon" data-tooltip="News" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--News">
+</span></a>
+	<a style="color: #6ab04c;" id="arcadeicon" data-tooltip="Arcade" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--Game">
+    <a style="visibility: hidden;">06:52:11</a>
 </span></a>
 </div>
 </div>
@@ -406,8 +411,19 @@ const contextMenuData = {
 </script>
 <script>
 $(document).ready(function(){
-$("#texteditoricon").click(function(){
-$("#texteditor").toggle("200");
+$("#weathericon").click(function(){
+new WinBox({
+
+title: "Weather",
+background: "rgba(12, 18, 32, 0.8)",
+class: ["iframe"],
+max: false,
+border: 0,
+width: 430,
+height: 520,
+bottom: 55.56,
+url: "https://weather-app-f8952.web.app/"
+});
 });
 });
 </script>
@@ -417,13 +433,13 @@ $("#calculatoricon").click(function(){
 new WinBox({
 
 title: "Calculator",
-background: "rgba(37, 36, 61, 0.75)",
+background: "rgba(37, 36, 45, 0.65)",
 class: ["iframe"],
 max: false,
 border: 0,
 width: 375,
 height: 529,
-bottom: 68.5,
+bottom: 55.56,
 url: "https://fireca.vercel.app/calculator.html"
 });
 });
@@ -441,37 +457,17 @@ max: false,
 border: 0,
 width: 300,
 height: 435,
-bottom: 68.5,
+bottom: 55.56,
 url: "https://www.feedgrabbr.com/inframe/?widgetid=d32389d31abdbb9f254b29643"
 });
 });
 });
 </script>
 <script>
-$(document).ready(function(){
-$("#dashboardicon").click(function(){
-$("#dashboard").toggle("200");
-});
-});
-</script>
-<script>
+//turn quicksettings into winbox modal
 $(document).ready(function(){
 $("#quicksettingsicon").click(function(){
 $("#quicksettings").toggle("200");
-});
-});
-</script>
-<script>
-$(document).ready(function(){
-$("#texteditorclose").click(function(){
-$("#texteditor").toggle("200");
-});
-});
-</script>
-<script>
-$(document).ready(function(){
-$("#dashboardclose").click(function(){
-$("#dashboard").toggle("200");
 });
 });
 </script>
@@ -535,7 +531,7 @@ document.getElementById("clockbar")
 showTime();
 </script>
 <script>
-!function(){if(!window.tooltipComponentInitiated){window.tooltipComponentInitiated=!0;var t,o,i,e,n,a=document.querySelector("body"),r={};document.addEventListener("mouseover",function(l){if(!o){var f=l.target.closest("[data-tooltip]");f&&(o=f,function(){if(o){var l,f=o.dataset;(r={tooltip:f.tooltip,position:f.tooltipPosition||"auto",zIndex:parseFloat(f.tooltipZindex)||9e149,enterDelay:parseFloat(f.tooltipEnterDelay)||0,exitDelay:parseFloat(f.tooltipExitDelay)||0,margin:parseFloat(f.tooltipMargin)||4,showDuration:parseFloat(f.tooltipShowDuration)||300,hideDuration:parseFloat(f.tooltipHideDuration)||200,transitionDistance:parseFloat(f.tooltipTransitionDistance)||10}).position=r.position.toLowerCase(),r.tooltip&&(c(),l='<div class="tooltip-box">'.concat(r.tooltip,"</div>"),a.insertAdjacentHTML("afterend",l),p(t=document.querySelector(".tooltip-box"),"zIndex",r.zIndex),function(){var i,e,n=window.innerWidth,a=d(o),l=d(t),c=a.left,s=a.top,f=l.width,m=l.height,h=a.width,w=a.height,g=r.position,v=h/2-f/2,D=w/2-m/2,x=r.margin,y=r.transitionDistance;"auto"===g&&(g=function(t){if(!t)return{};var o=t.getBoundingClientRect(),i=window.innerWidth,e=window.innerHeight,n=o.left,a=o.top,r=i-n-o.width,l=e-a-o.height;return{horizontal:n>r?"left":"right",vertical:a>l?"top":"bottom"}}(o).vertical),"top"===g?(s=s-m-x,c+=v):"right"===g?(s+=D,c=c+h+x):"left"===g?(s+=D,c=c-f-x):(s=s+w+x,c+=v),c<0?c=0:c+f>n&&(c=n-f),"top"===g?(i=s+y,e=c):"right"===g?(i=s,e=c-y):"left"===g?(i=s,e=c+y):(i=s-y,e=c);var T="translate3d(".concat(e,"px, ").concat(i,"px, 0)");p(t,"transform",T),u(t,"fromLeft",e),u(t,"fromTop",i),u(t,"top",s),u(t,"left",c),d(t)}(),clearTimeout(e),clearTimeout(n),i=setTimeout(function(){var o=s(t,"left"),i=s(t,"top"),e="translate3d(".concat(o,"px, ").concat(i,"px, 0)");p(t,"transitionDuration",r.showDuration+"ms"),p(t,"transform",e),p(t,"opacity",1)},r.enterDelay))}}())}}),document.addEventListener("mouseout",function(t){if(o){for(var i=t.relatedTarget;i;){if(i===o)return;i=i.parentNode}l()}}),document.addEventListener("touchmove",function(){l()})}function l(){(t||o)&&(clearTimeout(i),e=setTimeout(function(){if(t){var o=s(t,"fromLeft"),i=s(t,"fromTop"),e="translate3d(".concat(o,"px, ").concat(i,"px, 0)"),a=r.hideDuration;p(t,"transitionDuration",a+"ms"),p(t,"transform",e),p(t,"opacity",0),n=setTimeout(function(){c()},a)}},r.exitDelay),o=null)}function c(){t&&t.remove()}function p(t,o,i){t&&(t.style[o]=i)}function u(t,o,i){t&&(t.dataset[o]=i)}function s(t,o,i){var e=t?t.dataset[o]:"";return"number"===i?e=parseFloat(e)||0:"true"===e?e=!0:"false"===e&&(e=!1),e}function d(t){if(t){var o=t.getBoundingClientRect(),i=window.pageXOffset,e=window.pageYOffset;return{width:o.width,height:o.height,top:o.top+e,right:o.right+i,bottom:o.bottom+e,left:o.left+i}}}}();
+!function(){if(!window.tooltipComponentInitiated){window.tooltipComponentInitiated=!0;var t,o,i,e,n,a=document.querySelector("body"),r={};document.addEventListener("mouseover",function(l){if(!o){var f=l.target.closest("[data-tooltip]");f&&(o=f,function(){if(o){var l,f=o.dataset;(r={tooltip:f.tooltip,position:f.tooltipPosition||"auto",zIndex:parseFloat(f.tooltipZindex)||0,enterDelay:parseFloat(f.tooltipEnterDelay)||0,exitDelay:parseFloat(f.tooltipExitDelay)||0,margin:parseFloat(f.tooltipMargin)||7,showDuration:parseFloat(f.tooltipShowDuration)||300,hideDuration:parseFloat(f.tooltipHideDuration)||200,transitionDistance:parseFloat(f.tooltipTransitionDistance)||10}).position=r.position.toLowerCase(),r.tooltip&&(c(),l='<div class="tooltip-box">'.concat(r.tooltip,"</div>"),a.insertAdjacentHTML("afterend",l),p(t=document.querySelector(".tooltip-box"),"zIndex",r.zIndex),function(){var i,e,n=window.innerWidth,a=d(o),l=d(t),c=a.left,s=a.top,f=l.width,m=l.height,h=a.width,w=a.height,g=r.position,v=h/2-f/2,D=w/2-m/2,x=r.margin,y=r.transitionDistance;"auto"===g&&(g=function(t){if(!t)return{};var o=t.getBoundingClientRect(),i=window.innerWidth,e=window.innerHeight,n=o.left,a=o.top,r=i-n-o.width,l=e-a-o.height;return{horizontal:n>r?"left":"right",vertical:a>l?"top":"bottom"}}(o).vertical),"top"===g?(s=s-m-x,c+=v):"right"===g?(s+=D,c=c+h+x):"left"===g?(s+=D,c=c-f-x):(s=s+w+x,c+=v),c<0?c=0:c+f>n&&(c=n-f),"top"===g?(i=s+y,e=c):"right"===g?(i=s,e=c-y):"left"===g?(i=s,e=c+y):(i=s-y,e=c);var T="translate3d(".concat(e,"px, ").concat(i,"px, 0)");p(t,"transform",T),u(t,"fromLeft",e),u(t,"fromTop",i),u(t,"top",s),u(t,"left",c),d(t)}(),clearTimeout(e),clearTimeout(n),i=setTimeout(function(){var o=s(t,"left"),i=s(t,"top"),e="translate3d(".concat(o,"px, ").concat(i,"px, 0)");p(t,"transitionDuration",r.showDuration+"ms"),p(t,"transform",e),p(t,"opacity",1)},r.enterDelay))}}())}}),document.addEventListener("mouseout",function(t){if(o){for(var i=t.relatedTarget;i;){if(i===o)return;i=i.parentNode}l()}}),document.addEventListener("touchmove",function(){l()})}function l(){(t||o)&&(clearTimeout(i),e=setTimeout(function(){if(t){var o=s(t,"fromLeft"),i=s(t,"fromTop"),e="translate3d(".concat(o,"px, ").concat(i,"px, 0)"),a=r.hideDuration;p(t,"transitionDuration",a+"ms"),p(t,"transform",e),p(t,"opacity",0),n=setTimeout(function(){c()},a)}},r.exitDelay),o=null)}function c(){t&&t.remove()}function p(t,o,i){t&&(t.style[o]=i)}function u(t,o,i){t&&(t.dataset[o]=i)}function s(t,o,i){var e=t?t.dataset[o]:"";return"number"===i?e=parseFloat(e)||0:"true"===e?e=!0:"false"===e&&(e=!1),e}function d(t){if(t){var o=t.getBoundingClientRect(),i=window.pageXOffset,e=window.pageYOffset;return{width:o.width,height:o.height,top:o.top+e,right:o.right+i,bottom:o.bottom+e,left:o.left+i}}}}();
 </script>
 <script async src="https://cdnres.willyweather.com/widget/warning/loadView.html?id=138110" type="application/javascript"></script>
 </html>
