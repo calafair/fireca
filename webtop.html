@@ -72,6 +72,7 @@ input[type="text"]{background-color: transparent; border-bottom: solid 1px white
 #calculatoricon:hover {color: #e67e22 !important;}
 #texteditoricon:hover {color: #9b59b6 !important;}
 #imagesicon:hover {color: #f1c40f !important;}
+#musicicon:hover {color: #e67e22 !important;}
 #newsicon:hover {color: #c7ecee !important;}
 #arcadeicon:hover {color: #6ab04c !important;}
 #actioncentericon:hover {color: white !important; background: rgba(255, 255, 255, 0.1) !important;}
@@ -101,7 +102,7 @@ animation: spin 2s linear infinite;
 0% { transform: rotate(0deg); }
 100% { transform: rotate(360deg); }
 }
-.contentMenu * {900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 !important;}
+.contentMenu * {z-index: 900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 !important;}
 .contextMenu *,
 ::before,
 ::after {
@@ -251,6 +252,8 @@ document.getElementById("loader").style.display = "none";
 </span></a>
 	<a style="color: #f1c40f;" id="imagesicon" data-tooltip="Images" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--PictureCenter">
 </span></a>
+	<a style="color: #e67e22;" id="musicicon" data-tooltip="Music" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--MusicInCollection">
+</span></a>
 	<a style="color: #c7ecee;" id="newsicon" data-tooltip="News" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--News">
 </span></a>
 	<a style="color: #6ab04c;" id="arcadeicon" data-tooltip="Arcade" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--Game">
@@ -263,6 +266,15 @@ document.getElementById("loader").style.display = "none";
 </span></a>
 </bod>
 </body>
+<script src="https://unpkg.com/hotkeys-js/dist/hotkeys.min.js"></script>
+<script type="text/javascript">
+hotkeys('ctrl+`', function (event, handler){
+  switch (handler.key) {
+    case 'ctrl+`': sel();
+      break;
+  }
+});
+</script>
 <script>
 function cp(name, value) {
 	return value == null ?
@@ -410,19 +422,67 @@ const contextMenuData = {
 }
 </script>
 <script>
+function sel() {
+new WinBox({
+
+title: "Tools",
+background: "rgba(12, 18, 32, 0.6)",
+class: ["iframe"],
+max: true,
+border: 0,
+bottom: 55.55,
+url: "https://fireca.vercel.app/sel.html"
+});
+}
+</script>
+<script>
 $(document).ready(function(){
 $("#weathericon").click(function(){
 new WinBox({
 
 title: "Weather",
-background: "rgba(12, 18, 32, 0.8)",
+background: "rgba(12, 18, 32, 0.6)",
 class: ["iframe"],
 max: false,
 border: 0,
 width: 430,
 height: 520,
-bottom: 55.56,
+bottom: 55.55,
 url: "https://weather-app-f8952.web.app/"
+});
+});
+});
+</script>
+<script>
+$(document).ready(function(){
+$("#musicicon").click(function(){
+new WinBox({
+
+title: "Music",
+background: "rgba(12, 18, 32, 0.6)",
+class: ["iframe"],
+max: false,
+border: 0,
+width: 430,
+height: 600,
+bottom: 55.55,
+url: "https://fireca.vercel.app/music.html"
+});
+});
+});
+</script>
+<script>
+$(document).ready(function(){
+$("#texteditoricon").click(function(){
+new WinBox({
+
+title: "Text Editor",
+background: "rgba(12, 18, 32, 0.6)",
+class: ["iframe"],
+max: true,
+border: 0,
+bottom: 55.55,
+url: "https://fireca.vercel.app/editor.html"
 });
 });
 });
@@ -433,13 +493,13 @@ $("#calculatoricon").click(function(){
 new WinBox({
 
 title: "Calculator",
-background: "rgba(37, 36, 45, 0.65)",
+background: "rgba(12, 18, 32, 0.6)",
 class: ["iframe"],
 max: false,
 border: 0,
 width: 375,
 height: 529,
-bottom: 55.56,
+bottom: 55.55,
 url: "https://fireca.vercel.app/calculator.html"
 });
 });
@@ -451,13 +511,13 @@ $("#newsicon").click(function(){
 new WinBox({
 
 title: "News",
-background: "rgba(37, 36, 61, 0.75)",
+background: "rgba(12, 18, 32, 0.6)",
 class: ["no-resize", "no-max"],
 max: false,
 border: 0,
 width: 300,
 height: 435,
-bottom: 55.56,
+bottom: 55.55,
 url: "https://www.feedgrabbr.com/inframe/?widgetid=d32389d31abdbb9f254b29643"
 });
 });
