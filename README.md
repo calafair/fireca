@@ -174,6 +174,7 @@ Math.LOG2E (base 2 logarithm of E), and Math.LOG10E (base 10 logarithm of E). Re
   
   ## Developer info
   
-  
+  If you would like to contribute to Fireca, please visit the <a href="https://fireca.vercel.app">Fireca Homepage</a> and scroll to the footer
+  to open the developer page. Go to contribute to add an app/tile or see what we need help on.
   
   
