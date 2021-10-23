@@ -266,15 +266,6 @@ document.getElementById("loader").style.display = "none";
 </span></a>
 </bod>
 </body>
-<script src="https://unpkg.com/hotkeys-js/dist/hotkeys.min.js"></script>
-<script type="text/javascript">
-hotkeys('ctrl+`', function (event, handler){
-  switch (handler.key) {
-    case 'ctrl+`': sel();
-      break;
-  }
-});
-</script>
 <script>
 function cp(name, value) {
 	return value == null ?
@@ -419,20 +410,6 @@ const contextMenuData = {
 			disable: true,
 		},
 	],
-}
-</script>
-<script>
-function sel() {
-new WinBox({
-
-title: "Tools",
-background: "rgba(12, 18, 32, 0.6)",
-class: ["iframe"],
-max: true,
-border: 0,
-bottom: 55.55,
-url: "https://fireca.vercel.app/sel.html"
-});
 }
 </script>
 <script>
