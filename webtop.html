@@ -14,6 +14,13 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 })(window, document, "clarity", "script", "8bgnptuvnc");
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- UIkit CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.6/dist/css/uikit.min.css" />
+
+<!-- UIkit JS -->
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.7.6/dist/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.7.6/dist/js/uikit-icons.min.js"></script>
 <script src="https://nextapps-de.github.io/winbox/dist/winbox.bundle.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,7 +48,7 @@ body, html {height: 100%}
 #calculatorbar {padding: 10px; z-index: 10; cursor: default; background-color: rgba(38, 50, 56, 0.5); color: #fff;}
 .bblur {backdrop-filter: blur(99px); -webkit-backdrop-filter: blur(99px); border-radius: 15px; width: 30%; cursor: default; background-color: rgba(38, 50, 56, 0.5);}
 .closebtn {vertical-align: subalign; width: 20px;}
-.unselectable {user-select: none; -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none;}
+.unselectable {user-select: none !important; -moz-user-select: none !important; -webkit-user-select: none !important; -ms-user-select: none !important;}
 #quicksettings {display: none; backdrop-filter: blur(99px); -webkit-backdrop-filter: blur(99px);}
 #btn {width: 100%; height: 40px; font-size: 20px;}
 #calc{background-color: rgba(38, 50, 56, 0.65);}
@@ -76,10 +83,10 @@ input[type="text"]{background-color: transparent; border-bottom: solid 1px white
 #newsicon:hover {color: #c7ecee !important;}
 #arcadeicon:hover {color: #6ab04c !important;}
 #actioncentericon:hover {color: white !important; background: rgba(255, 255, 255, 0.1) !important;}
-#actioncentericon {text-align: center; right: 6px; padding: 3px 10px !important; text-decoration: none; font-size: 26px; transition: 0.15s; z-index: 90000000000000000000000000000000000000001; position: absolute; bottom: 5.56px;}
+#actioncentericon {text-align: center; right: 6px; padding: 3px 10px !important; text-decoration: none; font-size: 26px; transition: 0.15s; z-index: 10; position: absolute; bottom: 5.56px;}
 #actioncentericon:active {opacity: 0.5 !important; transform: scale(1.2);}
 #flexcenter {display: flex; justify-content: center;}
-.navbar {backdrop-filter: blur(99px); background-color: rgba(38, 50, 56, 0.5); -webkit-backdrop-filter: blur(99px); position: fixed; bottom: 0; width: 100%; height: 55.67px !important; z-index: 90000000000000000000000000000000000000000;}
+.navbar {backdrop-filter: blur(99px); background-color: rgba(38, 50, 56, 0.5); -webkit-backdrop-filter: blur(99px); position: fixed; bottom: 0; width: 100%; height: 55.67px !important; z-index: 9;}
 #loader {
 position: absolute;
 left: 50%;
@@ -228,42 +235,53 @@ document.getElementById("loader").style.display = "none";
 <a style="text-decoration:none; cursor:pointer;" id="quicksettingsicon" class="w3-ripple w3-small unselectable">&nbsp;<span class="ms-Icon ms-Icon--CircleHalfFull w3-right">
 </span></a>
 <div class="w3-right" id="quicksettings">Quick Settings</div>
-<div class="w3-display-middle bblur unselectable">
-<h1 class="w3-jumbo w3-animate-top w3-center" id="clock"> </h1>
+<div class="unselectable w3-display-middle bblur">
+<h1 class="w3-jumbo w3-animate-top uk-light w3-center" id="clock"> </h1>
 <hr class="w3-border-grey" style="margin:auto; width:40%">
 <p class="w3-medium w3-center"><script>days=7,lastvisit=new Object,firstvisitmsg="Welcome! Click on an app to get started.";lastvisit.subsequentvisitmsg="Welcome back! Last login: <br>[displaydate]",lastvisit.getCookie=function(t){var e=new RegExp(t+"=[^;]+","i");return document.cookie.match(e)?document.cookie.match(e)[0].split("=")[1]:""},lastvisit.setCookie=function(t,e,s){var i=new Date;i.setDate(i.getDate()+parseInt(s));document.cookie=t+"="+e+"; expires="+i.toGMTString()+"; path=/"},lastvisit.showmessage=function(){var t=new Date;if(""==lastvisit.getCookie("visitc"))lastvisit.setCookie("visitc",t,days),document.write(firstvisitmsg);else{var e=lastvisit.getCookie("visitc"),s=Date.parse(e),i=new Date;i.setTime(s);var a=new Array("Sun","Mon","Tues","Wed","Thur","Fri","Sat"),o=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"),n=i.getDate(),r=i.getDay();r=a[r];var v=i.getMonth();v=o[v],yy=i.getFullYear();var c=i.getHours(),l="AM";c>=12&&(l="PM"),c>12&&(c-=12),0==c&&(c=12),c<10&&(c="0"+c);var u=i.getMinutes();u<10&&(u="0"+u);var g=i.getSeconds();g<10&&(g="0"+g);var m=r+", "+v+" "+n+", "+yy+" "+c+":"+u+":"+g+" "+l;document.write(lastvisit.subsequentvisitmsg.replace("[displaydate]",m))}lastvisit.setCookie("visitc",t,days)},lastvisit.showmessage();</script><br></p>
 </div>
 <div class="w3-bottom navbar">
   <div class="w3-bar w3-padding-small">
-  <a style="color: white;" id="launchericon" data-tooltip="Launcher" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--CubeShape">
+  <a style="color: white;" id="launchericon" uk-tooltip="Launcher" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--CubeShape">
 </span></a>
-  <div id="flexcenter">
-    <a style="color: #2980b9; font-size: 27px;" id="dashboardicon" data-tooltip="Dashboard" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--SpeedHigh">
+  <div id="flexcenter" uk-sortable="handle: .navitem">
+    <a style="color: #2980b9; font-size: 27px;" id="dashboardicon" uk-tooltip="Dashboard" data-tooltip-position="top" class="navitem w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--SpeedHigh">
 </span></a>
-    <a style="color: #27ae60;" id="interwebicon" data-tooltip="InterWeb" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--Globe">
+    <a style="color: #27ae60;" id="interwebicon" uk-tooltip="InterWeb" data-tooltip-position="top" class="navitem w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--Globe">
 </span></a>
-    <a style="color: #e74c3c;" id="settingsicon" data-tooltip="Settings" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--Settings">
+    <a style="color: #e74c3c;" id="settingsicon" uk-tooltip="Settings" data-tooltip-position="top" class="navitem w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--Settings">
 </span></a>
-	<a style="color: #2980b9;" id="weathericon" data-tooltip="Weather" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--RainShowersDay">
+	<a style="color: #2980b9;" id="weathericon" uk-tooltip="Weather" data-tooltip-position="top" class="navitem w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--RainShowersDay">
 </span></a>
-	<a style="color: #e67e22;" id="calculatoricon" data-tooltip="Calculator" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--Calculator">
+	<a style="color: #e67e22;" id="calculatoricon" uk-tooltip="Calculator" data-tooltip-position="top" class="navitem w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--Calculator">
 </span></a>
-	<a style="color: #9b59b6;" id="texteditoricon" data-tooltip="Text Editor" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--TextDocument">
+	<a style="color: #9b59b6;" id="texteditoricon" uk-tooltip="Text Editor" data-tooltip-position="top" class="navitem w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--TextDocument">
 </span></a>
-	<a style="color: #f1c40f;" id="imagesicon" data-tooltip="Images" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--PictureCenter">
+	<a style="color: #f1c40f;" id="imagesicon" uk-tooltip="Images" data-tooltip-position="top" class="navitem w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--PictureCenter">
 </span></a>
-	<a style="color: #e67e22;" id="musicicon" data-tooltip="Music" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--MusicInCollection">
+	<a style="color: #e67e22;" id="musicicon" uk-tooltip="Music" data-tooltip-position="top" class="navitem w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--MusicInCollection">
 </span></a>
-	<a style="color: #c7ecee;" id="newsicon" data-tooltip="News" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--News">
+	<a style="color: #c7ecee;" id="newsicon" uk-tooltip="News" data-tooltip-position="top" class="navitem w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--News">
 </span></a>
-	<a style="color: #6ab04c;" id="arcadeicon" data-tooltip="Arcade" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--Game">
+	<a style="color: #6ab04c;" id="arcadeicon" uk-tooltip="Arcade" data-tooltip-position="top" class="navitem w3-bar-item w3-button w3-ripple unselectable"><span class="ms-Icon ms-Icon--Game">
     <a style="visibility: hidden;">06:52:11</a>
 </span></a>
 </div>
 </div>
 </div>
-	<a href="#" style="color: white;" id="actioncentericon" data-tooltip="Action Center" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span id="clockbar">
+	<a uk-toggle="target: #actioncentermenu" style="color: white;" id="actioncentericon" uk-tooltip="Action Center" data-tooltip-position="top" class="w3-bar-item w3-button w3-ripple unselectable"><span id="clockbar">
 </span></a>
+<div class="unselectable" id="actioncentermenu" uk-offcanvas="flip: true; overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+        <h3>Action Center</h3>
+
+        <p>There's nothing to see here!</p>
+
+    </div>
+</div>
 </bod>
 </body>
 <script>
