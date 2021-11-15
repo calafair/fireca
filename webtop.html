@@ -18,11 +18,98 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.6/dist/js/uikit.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.6/dist/js/uikit-icons.min.js"></script>
 <script src="https://nextapps-de.github.io/winbox/dist/winbox.bundle.js"></script>
-<link rel="stylesheet" href="/style.css">
 <link rel="shortcut icon" type="image/png" href="https://image.flaticon.com/icons/png/512/141/141731.png"/>
 <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css"/>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+	
+	
+	
+	
+	
+html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
+/* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
+html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
+article,aside,details,figcaption,figure,footer,header,main,menu,nav,section{display:block}summary{display:list-item}
+audio,canvas,progress,video{display:inline-block}progress{vertical-align:baseline}
+audio:not([controls]){display:none;height:0}[hidden],template{display:none}
+a{background-color:transparent}a:active,a:hover{outline-width:0}
+abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}
+b,strong{font-weight:bolder}dfn{font-style:italic}mark{background:#ff0;color:#000}
+small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sub{bottom:-0.25em}sup{top:-0.5em}figure{margin:1em 40px}img{border-style:none}
+code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}hr{box-sizing:content-box;height:0;overflow:visible}
+button,input,select,textarea,optgroup{font:inherit;margin:0}optgroup{font-weight:bold}
+button,input{overflow:visible}button,select{text-transform:none}
+button,[type=button],[type=reset],[type=submit]{-webkit-appearance:button}
+button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}
+button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}
+fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}
+legend{color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}
+[type=checkbox],[type=radio]{padding:0}
+[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}
+[type=search]{-webkit-appearance:textfield;outline-offset:-2px}
+[type=search]::-webkit-search-decoration{-webkit-appearance:none}
+::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}
+/* End extract */
+html,body{font-family:Verdana,sans-serif;font-size:15px;line-height:1.5}html{overflow-x:hidden}
+h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h4{font-size:20px}h5{font-size:18px}h6{font-size:16px}
+.aserif{font-family:serif}.asans-serif{font-family:sans-serif}.acursive{font-family:cursive}.amonospace{font-family:monospace}
+h1,h2,h3,h4,h5,h6{font-family:"Segoe UI",Arial,sans-serif;font-weight:400;margin:10px 0}.awide{letter-spacing:4px}
+hr{border:0;border-top:1px solid #eee;margin:20px 0}
+.abtn,.abutton{border:none;display:inline-block;padding:8px 16px;vertical-align:middle;overflow:hidden;text-decoration:none;color:inherit;background-color:inherit;text-align:center;cursor:pointer;white-space:nowrap}
+.abtn:hover{box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)}
+.abtn,.abutton{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}   
+.adisabled,.abtn:disabled,.abutton:disabled{cursor:not-allowed;opacity:0.3}.adisabled *,:disabled *{pointer-events:none}
+.abtn.adisabled:hover,.abtn:disabled:hover{box-shadow:none}
+.aripple:active{opacity:0.5}.aripple{transition:opacity 0s}
+.abar-block .adropdown-hover,.abar-block .adropdown-click{width:100%}
+.abar-block .adropdown-hover .adropdown-content,.abar-block .adropdown-click .adropdown-content{min-width:100%}
+.abar-block .adropdown-hover .abutton,.abar-block .adropdown-click .abutton{width:100%;text-align:left;padding:8px 16px}
+.abar{width:100%;overflow:hidden}.acenter .abar{display:inline-block;width:auto}
+.abar .abar-item{padding:8px 16px;float:left;width:auto;border:none;display:block;outline:0}
+.abar .adropdown-hover,.abar .adropdown-click{position:static;float:left}
+.abar .abutton{white-space:normal}
+.ajumbo{font-size:64px!important}
+.adisplay-middle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%)}
+.acenter{text-align:center!important}
+.atop,.abottom{position:fixed;width:100%;z-index:1}.atop{top:0}.abottom{bottom:0}
+.abar-block .abar-item{width:100%;display:block;padding:8px 16px;text-align:left;border:none;white-space:normal;float:none;outline:0}
+.abar-block.acenter .abar-item{text-align:center}.ablock{display:block;width:100%}
+.aresponsive{display:block;overflow-x:auto}
+.acontainer:after,.acontainer:before,.apanel:after,.apanel:before,.arow:after,.arow:before,.arow-padding:after,.arow-padding:before,
+.acell-row:before,.acell-row:after,.aclear:after,.aclear:before,.abar:before,.abar:after{content:"";display:table;clear:both}
+.w3-hide{display:none!important}.ashow-block,.ashow{display:block!important}.ashow-inline-block{display:inline-block!important}
+@media (max-width:1205px){.aauto{max-width:95%}}
+@media (max-width:600px){.amodal-content{margin:0 10px;width:auto!important}.amodal{padding-top:30px}
+.adropdown-hover.amobile .adropdown-content,.adropdown-click.amobile .adropdown-content{position:relative}	
+.w3-hide-small{display:none!important}.amobile{display:block;width:100%!important}.abar-item.amobile,.adropdown-hover.amobile,.adropdown-click.amobile{text-align:center}
+.adropdown-hover.amobile,.adropdown-hover.amobile .abtn,.adropdown-hover.amobile .abutton,.adropdown-click.amobile,.adropdown-click.amobile .abtn,.adropdown-click.amobile .abutton{width:100%}}
+@media (max-width:768px){.amodal-content{width:500px}.amodal{padding-top:50px}}
+@media (min-width:993px){.amodal-content{width:900px}.w3-hide-large{display:none!important}.asidebar.acollapse{display:block!important}}
+@media (max-width:992px) and (min-width:601px){.w3-hide-medium{display:none!important}}
+@media (max-width:992px){.asidebar.acollapse{display:none}.amain{margin-left:0!important;margin-right:0!important}.aauto{max-width:100%}}
+.atop,.abottom{position:fixed;width:100%;z-index:1}.atop{top:0}.abottom{bottom:0}
+.adisplay-middle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%)}
+.adisplay-container:hover .adisplay-hover{display:block}.adisplay-container:hover span.adisplay-hover{display:inline-block}.adisplay-hover{display:none}
+.aanimate-opacity{animation:opac 0.8s}@keyframes opac{from{opacity:0} to{opacity:1}}
+.aanimate-top{position:relative;animation:animatetop 0.4s}@keyframes animatetop{from{top:-300px;opacity:0} to{top:0;opacity:1}}
+.aanimate-left{position:relative;animation:animateleft 0.4s}@keyframes animateleft{from{left:-300px;opacity:0} to{left:0;opacity:1}}
+.aanimate-right{position:relative;animation:animateright 0.4s}@keyframes animateright{from{right:-300px;opacity:0} to{right:0;opacity:1}}
+.aanimate-bottom{position:relative;animation:animatebottom 0.4s}@keyframes animatebottom{from{bottom:-300px;opacity:0} to{bottom:0;opacity:1}}
+.aanimate-zoom {animation:animatezoom 0.6s}@keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}}
+.aanimate-input{transition:width 0.4s ease-in-out}.aanimate-input:focus{width:100%!important}
+.amargin{margin:16px!important}.amargin-top{margin-top:16px!important}.amargin-bottom{margin-bottom:16px!important}
+.amargin-left{margin-left:16px!important}.amargin-right{margin-right:16px!important}
+.apadding-small{padding:4px 8px!important}.apadding{padding:8px 16px!important}.apadding-large{padding:12px 24px!important}
+	
+	
+	
+	
+	
+	
+	
 body, h1, h2, h3, h4, h5, h6, p {font-family: 'Roboto', sans-serif !important;}
 .tooltip-box {backdrop-filter: blur(99px); -webkit-backdrop-filter: blur(99px); font-family: "Roboto", Helvetica, Arial, sans-serif; border-radius: 2px; font-size: 14px; color: #fff; background: rgba(44, 62, 80, 0.65); position: absolute; top: 0; left: 0; max-width: 300px; padding: 5px 10px; opacity: 0; pointer-events: none; z-index: 90000000000000000000000000000000000000000000000000000000000;}
 body, html {height: 100%}
@@ -280,277 +367,10 @@ document.getElementById("loader").style.display = "none";
 </bod>
 </body>
 <script>
-shortcut = {
-    all_shortcuts: {},
-    add: function(e, t, n) {
-      var r = {
-        type: "keydown",
-        propagate: !1,
-        disable_in_input: !1,
-        target: document,
-        keycode: !1
-      };
-      if (n)
-        for (var i in r) "undefined" == typeof n[i] && (n[i] = r[i]);
-      else n = r;
-      r = n.target, "string" == typeof n.target && (r = document.getElementById(n.target)), e = e.toLowerCase(), i = function(r) {
-        r = r || window.event;
-        if (n.disable_in_input) {
-          var i;
-          r.target ? i = r.target : r.srcElement && (i = r.srcElement), 3 == i.nodeType && (i = i.parentNode);
-          if ("INPUT" == i.tagName || "TEXTAREA" == i.tagName) return
-        }
-        r.keyCode ? code = r.keyCode : r.which && (code = r.which), i = String.fromCharCode(code).toLowerCase(), 188 == code && (i = ","), 190 == code && (i = ".");
-        var s = e.split("+"),
-          o = 0,
-          u = {
-            "`": "~",
-            1: "!",
-            2: "@",
-            3: "#",
-            4: "$",
-            5: "%",
-            6: "^",
-            7: "&",
-            8: "*",
-            9: "(",
-            0: ")",
-            "-": "_",
-            "=": "+",
-            ";": ":",
-            "'": '"',
-            ",": "<",
-            ".": ">",
-            "/": "?",
-            "\\": "|"
-          },
-          f = {
-            esc: 27,
-            escape: 27,
-            tab: 9,
-            space: 32,
-            "return": 13,
-            enter: 13,
-            backspace: 8,
-            scrolllock: 145,
-            scroll_lock: 145,
-            scroll: 145,
-            capslock: 20,
-            caps_lock: 20,
-            caps: 20,
-            numlock: 144,
-            num_lock: 144,
-            num: 144,
-            pause: 19,
-            "break": 19,
-            insert: 45,
-            home: 36,
-            "delete": 46,
-            end: 35,
-            pageup: 33,
-            page_up: 33,
-            pu: 33,
-            pagedown: 34,
-            page_down: 34,
-            pd: 34,
-            left: 37,
-            up: 38,
-            right: 39,
-            down: 40,
-            f1: 112,
-            f2: 113,
-            f3: 114,
-            f4: 115,
-            f5: 116,
-            f6: 117,
-            f7: 118,
-            f8: 119,
-            f9: 120,
-            f10: 121,
-            f11: 122,
-            f12: 123
-          },
-          l = !1,
-          c = !1,
-          h = !1,
-          p = !1,
-          d = !1,
-          v = !1,
-          m = !1,
-          y = !1;
-        r.ctrlKey && (p = !0), r.shiftKey && (c = !0), r.altKey && (v = !0), r.metaKey && (y = !0);
-        for (var b = 0; k = s[b], b < s.length; b++) "ctrl" == k || "control" == k ? (o++, h = !0) : "shift" == k ? (o++, l = !0) : "alt" == k ? (o++, d = !0) : "meta" == k ? (o++, m = !0) : 1 < k.length ? f[k] == code && o++ : n.keycode ? n.keycode == code && o++ : i == k ? o++ : u[i] && r.shiftKey && (i = u[i], i == k && o++);
-        if (o == s.length && p == h && c == l && v == d && y == m && (t(r), !n.propagate)) return r.cancelBubble = !0, r.returnValue = !1, r.stopPropagation && (r.stopPropagation(), r.preventDefault()), !1
-      }, this.all_shortcuts[e] = {
-        callback: i,
-        target: r,
-        event: n.type
-      }, r.addEventListener ? r.addEventListener(n.type, i, !1) : r.attachEvent ? r.attachEvent("on" + n.type, i) : r["on" + n.type] = i
-    },
-    remove: function(e) {
-      var e = e.toLowerCase(),
-        t = this.all_shortcuts[e];
-      delete this.all_shortcuts[e];
-      if (t) {
-        var e = t.event,
-          n = t.target,
-          t = t.callback;
-        n.detachEvent ? n.detachEvent("on" + e, t) : n.removeEventListener ? n.removeEventListener(e, t, !1) : n["on" + e] = !1
-      }
-    }
-  },
-  shortcut.add("Ctrl+U", function() {
-    
-  }),
-  shortcut.add("Meta+Alt+U", function() {
-    
-  })
+shortcut={all_shortcuts:{},add:function(e,t,a){var o={type:"keydown",propagate:!1,disable_in_input:!1,target:document,keycode:!1};if(a)for(var n in o)void 0===a[n]&&(a[n]=o[n]);else a=o;o=a.target,"string"==typeof a.target&&(o=document.getElementById(a.target)),e=e.toLowerCase(),n=function(o){var n;if((o=o||window.event,a.disable_in_input)&&(o.target?n=o.target:o.srcElement&&(n=o.srcElement),3==n.nodeType&&(n=n.parentNode),"INPUT"==n.tagName||"TEXTAREA"==n.tagName))return;o.keyCode?code=o.keyCode:o.which&&(code=o.which),n=String.fromCharCode(code).toLowerCase(),188==code&&(n=","),190==code&&(n=".");var r=e.split("+"),c=0,l={"`":"~",1:"!",2:"@",3:"#",4:"$",5:"%",6:"^",7:"&",8:"*",9:"(",0:")","-":"_","=":"+",";":":","'":'"',",":"<",".":">","/":"?","\\":"|"},s={esc:27,escape:27,tab:9,space:32,return:13,enter:13,backspace:8,scrolllock:145,scroll_lock:145,scroll:145,capslock:20,caps_lock:20,caps:20,numlock:144,num_lock:144,num:144,pause:19,break:19,insert:45,home:36,delete:46,end:35,pageup:33,page_up:33,pu:33,pagedown:34,page_down:34,pd:34,left:37,up:38,right:39,down:40,f1:112,f2:113,f3:114,f4:115,f5:116,f6:117,f7:118,f8:119,f9:120,f10:121,f11:122,f12:123},d=!1,i=!1,p=!1,u=!1,f=!1,h=!1,g=!1,v=!1;o.ctrlKey&&(u=!0),o.shiftKey&&(i=!0),o.altKey&&(h=!0),o.metaKey&&(v=!0);for(var y=0;k=r[y],y<r.length;y++)"ctrl"==k||"control"==k?(c++,p=!0):"shift"==k?(c++,d=!0):"alt"==k?(c++,f=!0):"meta"==k?(c++,g=!0):1<k.length?s[k]==code&&c++:a.keycode?a.keycode==code&&c++:n==k?c++:l[n]&&o.shiftKey&&((n=l[n])==k&&c++);if(c==r.length&&u==p&&i==d&&h==f&&v==g&&(t(o),!a.propagate))return o.cancelBubble=!0,o.returnValue=!1,o.stopPropagation&&(o.stopPropagation(),o.preventDefault()),!1},this.all_shortcuts[e]={callback:n,target:o,event:a.type},o.addEventListener?o.addEventListener(a.type,n,!1):o.attachEvent?o.attachEvent("on"+a.type,n):o["on"+a.type]=n},remove:function(e){e=e.toLowerCase();var t=this.all_shortcuts[e];if(delete this.all_shortcuts[e],t){e=t.event;var a=t.target;t=t.callback;a.detachEvent?a.detachEvent("on"+e,t):a.removeEventListener?a.removeEventListener(e,t,!1):a["on"+e]=!1}}},shortcut.add("Ctrl+U",function(){}),shortcut.add("Meta+Alt+U",function(){});
 </script>
 <script>
-function cp(name, value) {
-	return value == null ?
-		getComputedStyle(document.documentElement).getPropertyValue(name) :
-		document.documentElement.style.setProperty(name, value)
-}
-function createElement(tag, classes, appendElement) {
-	const newElement = document.createElement(tag)
-	if(classes) newElement.classList.add(...classes.split(" "))
-	if(appendElement) appendElement.append(newElement)
-	return newElement
-}
-// -------------------------------------------------- //
-
-function createContextMenu(menuData, isSubmenu) {
-	// I create the context menu and the list inside it (and check if its submenu)
-	const menu = createElement('div', isSubmenu?'contextMenu submenu':'contextMenu')
-	const list = createElement('ul', false, menu)
-
-	// Now we loop through the array/objects to create the items inside
-	for(let i = 0; i < menuData.length; i++) {
-		console.log(menuData[i])
-		// Check if the object is valid or skip it
-		if(Object.keys(menuData[i]).length <= 0) continue		
-		
-		// We create the list element aka context menu item
-		let listElement = createElement('li', null, list)
-		
-		// If it is a separator, I skip the rest since it's unnecesary
-		if(menuData[i].type === 'separator') {
-			listElement.classList.add('separator')
-			continue
-		}
-		// Add title
-		if(menuData[i].hasOwnProperty('title')) listElement.innerText = menuData[i].title
-		
-		// Here should be a switch
-		// If it's a regular element, just title and things
-		if(menuData[i].type === 'regular') {
-			listElement.classList.add('regular')
-		}
-		
-		// If it's a expandable element, give necessary classes
-		if(menuData[i].type === 'expandable') {
-			 listElement.classList.add('expandable')
-		 }
-	
-		// If disable
-		if(menuData[i].disable) listElement.classList.add('disable')
-		// If it has submenu, we add the neccesary function to open it (WIP)
-		// if(menuData[i].hasOwnProperty('submenu')) {}
-		
-	}//end-loop
-	
-	// To close it
-	document.addEventListener('mousedown', ev => {
-		if (!ev.target.closest('.contextMenu')) removeContextMenu(ev, menu)
-	});
-	document.addEventListener('keydown', ev => { 
-		if (ev.key == 'Escape') removeContextMenu(ev, menu)
-	 });
-
-	return menu
-}
-
-function showContextMenu(ev, isSubmenu) {
-	console.log()
-	ev.preventDefault()
-	if(ev.target.closest('.contextMenu')) return
-	// Element where click is made
-	const ownerElement = ev.target.closest('[data-contextmenu]')
-	const dataMenu     = ownerElement.getAttribute('data-contextmenu')
-	// We create the (sub)menu 
-	isSubmenu = isSubmenu || false
-	const contextMenu = createContextMenu(contextMenuData[dataMenu], isSubmenu)
-	document.body.append(contextMenu)
-	// contextMenuData
-	
-	// Show
-	cp('--ctxmenu-max-height', 'auto')
-	// If animation direction should is or not down
-	let isDown,
-		 menuRect = contextMenu.getBoundingClientRect()
-	
-	cp('--ctxmenu-max-height', menuRect.height + 'px')
-	contextMenu.classList.add('visible')
-	
-	// X
-	if(ev.x <= 0) contextMenu.style.left = '1px'
-	else if((ev.x + menuRect.width) > window.innerWidth) contextMenu.style.left = window.innerWidth - menuRect.width - 1 +'px'
-	else contextMenu.style.left = ev.x + 'px'
-	// Y
-	if((ev.y + menuRect.height) > window.innerHeight) {
-		contextMenu.style.top = "initial"
-		
-		// Test if overflow top
-		if((ev.y - menuRect.height) < 0) {
-			contextMenu.style.bottom  = (window.innerHeight - menuRect.height) - 1 + 'px'	
-		} else {
-			contextMenu.style.bottom  = (window.innerHeight - ev.y) + 'px'
-		}
-		
-		isDown = false
-	}
-	else {
-		contextMenu.style.top  = ev.y + 'px'
-		contextMenu.style.bottom  = ""
-		isDown = true
-	}
-	
-	contextMenu.classList.remove('down')
-	contextMenu.classList.remove('anime')
-	if(isDown) setTimeout(ev => contextMenu.classList.add('down'), 100)
-	setTimeout(ev => contextMenu.classList.add('anime'), 100)
-}
-
-function removeContextMenu(ev, menu) {
-	menu.remove()
-}
-document.addEventListener('contextmenu', showContextMenu)
-
-// -------------------------------------------------- //
-const contextMenuData = {
-	desktop: [
-		{},
-		{
-			type: 'expandable',
-			title: 'Overview',
-			disable: false,
-			submenu: [],
-		}, { type: 'separator' }, {
-			type: 'regular',
-			title: 'Show Desktop',
-			disable: false,
-		}, {
-			type: 'regular',
-			title: 'Foo',
-			disable: true,
-		}, { type: 'separator' }, {
-			type: 'regular',
-			title: 'Bar',
-			disable: true,
-		},
-	],
-}
+function cp(e,t){return null==t?getComputedStyle(document.documentElement).getPropertyValue(e):document.documentElement.style.setProperty(e,t)}function createElement(e,t,n){const o=document.createElement(e);return t&&o.classList.add(...t.split(" ")),n&&n.append(o),o}function createContextMenu(e,t){const n=createElement("div",t?"contextMenu submenu":"contextMenu"),o=createElement("ul",!1,n);for(let t=0;t<e.length;t++){if(console.log(e[t]),Object.keys(e[t]).length<=0)continue;let n=createElement("li",null,o);"separator"!==e[t].type?(e[t].hasOwnProperty("title")&&(n.innerText=e[t].title),"regular"===e[t].type&&n.classList.add("regular"),"expandable"===e[t].type&&n.classList.add("expandable"),e[t].disable&&n.classList.add("disable")):n.classList.add("separator")}return document.addEventListener("mousedown",e=>{e.target.closest(".contextMenu")||removeContextMenu(e,n)}),document.addEventListener("keydown",e=>{"Escape"==e.key&&removeContextMenu(e,n)}),n}function showContextMenu(e,t){if(console.log(),e.preventDefault(),e.target.closest(".contextMenu"))return;const n=e.target.closest("[data-contextmenu]").getAttribute("data-contextmenu");t=t||!1;const o=createContextMenu(contextMenuData[n],t);document.body.append(o),cp("--ctxmenu-max-height","auto");let s,a=o.getBoundingClientRect();cp("--ctxmenu-max-height",a.height+"px"),o.classList.add("visible"),e.x<=0?o.style.left="1px":e.x+a.width>window.innerWidth?o.style.left=window.innerWidth-a.width-1+"px":o.style.left=e.x+"px",e.y+a.height>window.innerHeight?(o.style.top="initial",e.y-a.height<0?o.style.bottom=window.innerHeight-a.height-1+"px":o.style.bottom=window.innerHeight-e.y+"px",s=!1):(o.style.top=e.y+"px",o.style.bottom="",s=!0),o.classList.remove("down"),o.classList.remove("anime"),s&&setTimeout(e=>o.classList.add("down"),100),setTimeout(e=>o.classList.add("anime"),100)}function removeContextMenu(e,t){t.remove()}document.addEventListener("contextmenu",showContextMenu);const contextMenuData={desktop:[{},{type:"expandable",title:"Overview",disable:!1,submenu:[]},{type:"separator"},{type:"regular",title:"Show Desktop",disable:!1},{type:"regular",title:"Foo",disable:!0},{type:"separator"},{type:"regular",title:"Bar",disable:!0}]};
 </script>
 <script>
 $(document).ready(function(){
