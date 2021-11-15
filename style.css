@@ -1,0 +1,344 @@
+html {
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+/* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+body {
+    margin: 0;
+}
+summary {
+    display: list-item;
+}
+audio,
+canvas,
+progress,
+video {
+    display: inline-block;
+}
+progress {
+    vertical-align: baseline;
+}
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+[hidden],
+template {
+    display: none;
+}
+a {
+    background-color: transparent;
+}
+a:active,
+a:hover {
+    outline-width: 0;
+}
+abbr[title] {
+    border-bottom: none;
+    text-decoration: underline;
+    text-decoration: underline dotted;
+}
+b,
+strong {
+    font-weight: bolder;
+}
+dfn {
+    font-style: italic;
+}
+mark {
+    background: #ff0;
+    color: #000;
+}
+small {
+    font-size: 80%;
+}
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+sub {
+    bottom: -0.25em;
+}
+sup {
+    top: -0.5em;
+}
+figure {
+    margin: 1em 40px;
+}
+img {
+    border-style: none;
+}
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+button,
+input,
+select,
+textarea,
+optgroup {
+    font: inherit;
+    margin: 0;
+}
+optgroup {
+    font-weight: bold;
+}
+button,
+input {
+    overflow: visible;
+}
+button,
+select {
+    text-transform: none;
+}
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button;
+}
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText;
+}
+textarea {
+    overflow: auto;
+}
+[type="checkbox"],
+[type="radio"] {
+    padding: 0;
+}
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+[type="search"] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px;
+}
+[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit;
+}
+/* End extract */
+.abutton {
+    border: none;
+    display: inline-block;
+    padding: 8px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.abutton {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.aripple:active {
+    opacity: 0.5;
+}
+.aripple {
+    transition: opacity 0s;
+}
+.abar-block .adropdown-hover,
+.abar-block .adropdown-click {
+    width: 100%;
+}
+.abar-block .adropdown-hover .adropdown-content,
+.abar-block .adropdown-click .adropdown-content {
+    min-width: 100%;
+}
+.abar-block .adropdown-hover .abutton,
+.abar-block .adropdown-click .abutton {
+    width: 100%;
+    text-align: left;
+    padding: 8px 16px;
+}
+.abar {
+    width: 100%;
+    overflow: hidden;
+}
+.acenter .abar {
+    display: inline-block;
+    width: auto;
+}
+.abar .abar-item {
+    padding: 8px 16px;
+    float: left;
+    width: auto;
+    border: none;
+    display: block;
+    outline: 0;
+}
+.abar .adropdown-hover,
+.abar .adropdown-click {
+    position: static;
+    float: left;
+}
+.abar .abutton {
+    white-space: normal;
+}
+.abar-block .abar-item {
+    width: 100%;
+    display: block;
+    padding: 8px 16px;
+    text-align: left;
+    border: none;
+    white-space: normal;
+    float: none;
+    outline: 0;
+}
+.abar-block.acenter .abar-item {
+    text-align: center;
+}
+.ablock {
+    display: block;
+    width: 100%;
+}
+.w3-hide {
+    display: none !important;
+}
+@media (max-width: 1205px) {
+    .aauto {
+        max-width: 95%;
+    }
+}
+@media (max-width: 600px) {
+    .amodal-content {
+        margin: 0 10px;
+        width: auto !important;
+    }
+    .amodal {
+        padding-top: 30px;
+    }
+    .adropdown-hover.amobile .adropdown-content,
+    .adropdown-click.amobile .adropdown-content {
+        position: relative;
+    }
+    .w3-hide-small {
+        display: none !important;
+    }
+    .amobile {
+        display: block;
+        width: 100% !important;
+    }
+    .abar-item.amobile,
+    .adropdown-hover.amobile,
+    .adropdown-click.amobile {
+        text-align: center;
+    }
+    .adropdown-hover.amobile,
+    .adropdown-hover.amobile .abtn,
+    .adropdown-hover.amobile .abutton,
+    .adropdown-click.amobile,
+    .adropdown-click.amobile .abtn,
+    .adropdown-click.amobile .abutton {
+        width: 100%;
+    }
+}
+@media (max-width: 992px) and (min-width: 601px) {
+    .w3-hide-medium {
+        display: none !important;
+    }
+}
+.adisplay-middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+.adisplay-container:hover .adisplay-hover {
+    display: block;
+}
+.adisplay-container:hover span.adisplay-hover {
+    display: inline-block;
+}
+.aanimate-opacity {
+    animation: opac 0.8s;
+}
+@keyframes opac {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.aanimate-top {
+    position: relative;
+    animation: animatetop 0.4s;
+}
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+.atiny {
+    font-size: 10px !important;
+}
+.asmall {
+    font-size: 12px !important;
+}
+.amedium {
+    font-size: 15px !important;
+}
+.ajumbo {
+    font-size: 64px !important;
+}
+.acenter {
+    text-align: center !important;
+}
+.apadding-small {
+    padding: 4px 8px !important;
+}
+.aright {
+    float: right !important;
+}
+.abutton:hover {
+    color: #000 !important;
+    background-color: #ccc !important;
+}
