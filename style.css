@@ -41,6 +41,10 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .abar .abar-item{padding:8px 16px;float:left;width:auto;border:none;display:block;outline:0}
 .abar .adropdown-hover,.abar .adropdown-click{position:static;float:left}
 .abar .abutton{white-space:normal}
+.ajumbo{font-size:64px!important}
+.adisplay-middle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%)}
+.acenter{text-align:center!important}
+.atop,.abottom{position:fixed;width:100%;z-index:1}.atop{top:0}.abottom{bottom:0}
 .abar-block .abar-item{width:100%;display:block;padding:8px 16px;text-align:left;border:none;white-space:normal;float:none;outline:0}
 .abar-block.acenter .abar-item{text-align:center}.ablock{display:block;width:100%}
 .aresponsive{display:block;overflow-x:auto}
